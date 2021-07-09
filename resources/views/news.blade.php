@@ -1,7 +1,7 @@
 @section('news')
-<div class="col-lg-3 col-md-12 mb-4">
+<div class="col-lg-2 col-md-12 mb-4">
     <div class="row">
-        <div class="col-lg-12 col-md-4 mb-2 news-item">
+        <div class="col-lg-12 col-md-4 col-sm-12 mb-2 news-item">
             <div class="text-end">
                 <span>11.11.1111</span>
             </div>
