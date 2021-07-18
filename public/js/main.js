@@ -1,14 +1,11 @@
 $(function() {
     $(".photo-slider").slick({
-        prevArrow:
-            '<button type="button" class="btn btn-danger btn-prev"><i class="fas fa-chevron-left"></i></button>',
-        nextArrow:
-            '<button type="button" class="btn btn-danger btn-next"><i class="fas fa-chevron-right"></i></button>',
+        prevArrow: '<button type="button" class="btn btn-danger btn-prev"><i class="fas fa-chevron-left"></i></button>',
+        nextArrow: '<button type="button" class="btn btn-danger btn-next"><i class="fas fa-chevron-right"></i></button>',
         infinite: true,
         slidesToShow: 5,
         slidesToScroll: 1,
-        responsive: [
-            {
+        responsive: [{
                 breakpoint: 1200,
                 settings: {
                     slidesToShow: 4,
@@ -39,6 +36,6 @@ $(function() {
         ]
     });
     $(".fancybox").fancybox({
-        autoScale : false
+        autoScale: false
     });
 });

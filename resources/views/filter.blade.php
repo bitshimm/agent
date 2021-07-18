@@ -1,6 +1,6 @@
 @section('filter')
 <div class="col-lg-10 col-md-12 mb-4">
-    <div class="filter-site py-3 px-2">
+    <div class="filter-site pt-3 pb-5 px-2">
         <div class="text-white row my-4">
             <div class="col-5 text-end"><i class="fas fa-search fa-2x"></i></div>
             <div class="col-7 text-left"><span class="h3 pl-5">Подобрать круиз</span></div>

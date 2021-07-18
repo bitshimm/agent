@@ -1,8 +1,8 @@
 @section('description')
 <div class="col-12 decription-site">
-    <div class="row p-3">
+    <div class="row p-4">
         <div class="col-12">
-            <div class="text-center">
+            <div class="text-center mb-3">
                 <h2>Круиз - это выгодно</h2>
             </div>
             <div>
