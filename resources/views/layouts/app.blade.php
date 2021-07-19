@@ -15,35 +15,8 @@
 </head>
 
 <body class="body-img">
-    <header class="bg-light">
-        @include('header')
-    </header>
-    <section class="site_bg_image">
-        <div class="main mb-3">
-            <div class="container">
-                <textarea class="textedit">
-                </textarea>
-                <div class="row d-none d-lg-block pt-2">
-                    <div class="col-2 offset-10 text-start text-white p-0">
-                        <h4>НОВОСТИ</h4>
-                    </div>
-                </div>
-                <div class="row pt-sm-3 pt-lg-0">
-                    @include('filter')
-                    @include('news')
-                </div>
-                <div class="row">
-                    @include('description')
-                </div>
-                <div class="row">
-                    @include('slider')
-                </div>
-            </div>
-        </div>
-        <footer>
-            @include('footer')
-        </footer>
-    </section>
+    @yield('content')
+
 
     <script src="/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>

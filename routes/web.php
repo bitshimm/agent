@@ -1,9 +1,9 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('layouts/app');
-});
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/', 'MainController@main')->name('main');
+
+Route::get('/admin', 'AdminController@admin')->name('admin');
 
 Auth::routes();
