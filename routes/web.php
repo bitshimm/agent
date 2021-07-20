@@ -2,8 +2,13 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::post('/', 'MainController@main')->name('main');
+Route::get('/', 'MainController@Main')->name('main');
 
-Route::get('/admin', 'AdminController@admin')->name('admin');
+Route::get('/admin/dashboard/pages', 'NavPageController@Page')->name('pages');
+
+Route::get('/admin/dashboard/pages/add', 'NavPageController@PageAdd')->name('pageAdd');
+
+Route::post('/admin/dashboard/pages/add', 'NavPageController@PageAddSubmit')->name('pageAddSubmit');
+
 
 Auth::routes();
