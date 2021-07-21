@@ -22,7 +22,7 @@ class NavPageController extends Controller
         $page = new NavPage();
         return view('dashboard/add/pageAdd', compact('page'));
     }
-    
+
     public function PageAddSubmit(Request $req)
     {
         $page = new NavPage();
@@ -31,6 +31,27 @@ class NavPageController extends Controller
 
         $page->save();
 
-        return redirect()->route('pages')->with('success', 'Запись добавлена');
+        return redirect()->route('pages')->with('success', 'Странциа добавлена');
+    }
+
+    public function PageEdit($id)
+    {
+        $page = new NavPage();
+        return view('dashboard/edit/pageEdit', ['page' => $page->find($id)]);
+    }
+
+    public function PageEditSubmit($id, Request $req){
+        $page = NavPage::find($id);
+        $page->title = $req->input('title');
+        $page->description = $req->input('description');
+
+        $page->save();
+
+        return redirect()->route('pages', $id)->with('success', 'Страница изменена');
+    }
+
+    public function PageDeleteSubmit($id){
+        NavPage::find($id)->delete();
+        return redirect()->route('pages')->with('success', 'Страница удалена');
     }
 }

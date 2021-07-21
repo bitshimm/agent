@@ -22,13 +22,16 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarAdminPanel" aria-controls="navBarAdminPanel" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
+            <div class="nav-item">
+                <a href="{{route('main')}}" role="button" class="nav-link border border-light">Главная</a>
+            </div>
             <div class="collapse navbar-collapse justify-content-center" id="navBarAdminPanel">
                 <ul class="navbar-nav  mb-2 mb-lg-0">
                     <li class="nav-item m-2">
-                        <a href="{{route('pages')}}" role="button" class="nav-link border border-light">страницы</a>
+                        <a href="{{route('pages')}}" role="button" class="nav-link border border-light">Страницы</a>
                     </li>
                     <li class="nav-item m-2">
-                        <a href="#" role="button" class="nav-link border border-light" data-bs-toggle="modal" data-bs-target="#exampleModal2">Клиенты</a>
+                        <a href="{{route('gallery')}}" role="button" class="nav-link border border-light">Галлерея</a>
                     </li>
                     <li class="nav-item m-2">
                         <a href="#" role="button" class="nav-link border border-light" data-bs-toggle="modal" data-bs-target="#exampleModal3">Контакты</a>
@@ -38,12 +41,27 @@
                     </li>
                 </ul>
             </div>
+            <div class="nav-item">
+                @guest
+                @else
+                <a class="nav-item nav-link text-center" href="{{route('logout')}}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                    <i class="far fa-user"></i>
+                    Выйти
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+                @endguest
+            </div>
         </div>
     </nav>
+    
     @endif
 
     @yield('content')
-    
+
     <script src="/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -56,7 +74,8 @@
     <script>
         $(function() {
             $('.text-editor').summernote({
-                lang:"ru-RU"
+                lang: "ru-RU",
+                height:200
             });
         });
     </script>
