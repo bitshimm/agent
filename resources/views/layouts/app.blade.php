@@ -17,39 +17,40 @@
 
 <body class="body-img">
     @if(Auth::check())
-    <nav class="navbar navbar-expand-lg p-0 shadow bg-body rounded">
+    <nav class="navbar navbar-expand-lg p-0 shadow bg-dark admin-nav">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarAdminPanel" aria-controls="navBarAdminPanel" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
             <div class="nav-item">
-                <a href="{{route('main')}}" role="button" class="nav-link border border-light">Главная</a>
+                <a href="{{route('main')}}" role="button" class="nav-link {{ Request::is('/') ? 'active' : null }}"><i class="fas fa-home"></i>&nbsp;&nbsp;Главная</a>
             </div>
             <div class="collapse navbar-collapse justify-content-center" id="navBarAdminPanel">
                 <ul class="navbar-nav  mb-2 mb-lg-0">
                     <li class="nav-item m-2">
-                        <a href="{{route('pages')}}" role="button" class="nav-link border border-light">Страницы</a>
+                        <a href="{{route('pages')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/pages*')) ? 'active' : '' }}"><i class="fas fa-file"></i>&nbsp;&nbsp;Страницы</a>
                     </li>
                     <li class="nav-item m-2">
-                        <a href="{{route('gallery')}}" role="button" class="nav-link border border-light">Галлерея</a>
+                        <a href="{{route('gallery')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/gallery*')) ? 'active' : '' }}"><i class="fas fa-images"></i>&nbsp;&nbsp;Галлерея</a>
                     </li>
                     <li class="nav-item m-2">
-                        <a href="#" role="button" class="nav-link border border-light" data-bs-toggle="modal" data-bs-target="#exampleModal3">Контакты</a>
+                        <a href="{{route('contacts')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/contacts*')) ? 'active' : '' }}"><i class="fas fa-phone-alt"></i>&nbsp;&nbsp;Контакты</a>
                     </li>
                     <li class="nav-item m-2">
-                        <a href="#" role="button" class="nav-link border border-light" data-bs-toggle="modal" data-bs-target="#exampleModal4">О компании</a>
+                        <a href="{{route('news')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/news*')) ? 'active' : '' }}"><i class="fas fa-newspaper"></i>&nbsp;&nbsp;Новости</a>
                     </li>
                 </ul>
             </div>
             <div class="nav-item">
                 @guest
                 @else
-                <a class="nav-item nav-link text-center" href="{{route('logout')}}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                    <i class="far fa-user"></i>
-                    Выйти
-                </a>
-
+                <div class="nav-item m-2">
+                    <a href="{{route('logout')}}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();" role="button" class="px-3 nav-link text-center">
+                        <i class="fas fa-sign-out-alt d-sm-block d-md-block d-lg-none"></i>
+                        <span class="d-none d-lg-block"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Выйти</span>
+                    </a>
+                </div>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
@@ -57,10 +58,12 @@
             </div>
         </div>
     </nav>
-    
-    @endif
 
-    @yield('content')
+    @endif
+    <div style="min-height: 1000px;">
+        @yield('content')
+    </div>
+
 
     <script src="/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -75,7 +78,7 @@
         $(function() {
             $('.text-editor').summernote({
                 lang: "ru-RU",
-                height:200
+                height: 200
             });
         });
     </script>

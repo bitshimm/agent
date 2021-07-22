@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Gallery;
+use Illuminate\Support\Facades\Storage;
 
 class GalleryController extends Controller
 {
@@ -32,5 +33,10 @@ class GalleryController extends Controller
         $gallery->save();
 
         return redirect()->route('gallery')->with('success', 'Картинка добавлена');
+    }
+
+    public function GalleryDeleteSubmit($id){
+        Gallery::find($id)->delete();
+        return redirect()->route('gallery')->with('success', 'Изображение удалено');
     }
 }

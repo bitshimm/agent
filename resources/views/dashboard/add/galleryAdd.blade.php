@@ -14,9 +14,6 @@
                 <div class="mb-3">
                     <label for="image" class="form-label m-0">Картинка</label>
                     <input class="form-control" type="file" id="image" name="image" required>
-                    <div class="invalid-feedback">
-                        Please choose a username.
-                    </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Добавить</button>
             </div>

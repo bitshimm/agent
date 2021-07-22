@@ -7,10 +7,10 @@
         {{ session('success')}}
     </div>
     @endif
-    <h3>Страницы</h3>
+    <h3>Контакты</h3>
     <div class="mb-3">
-        <a href="{{route('pageAdd')}}">
-            <button class="btn btn-primary">Добавить</i></button>
+        <a href="{{route('contactAdd')}}">
+            <button class="btn btn-primary">Добавить</button>
         </a>
     </div>
     <div class="table-responsive">
@@ -18,20 +18,20 @@
             <thead class="table-dark">
                 <tr>
                     <th>ID</th>
-                    <th>Заголовок</th>
-                    <th>Дата</th>
+                    <th>Иконка</th>
+                    <th>Значение</th>
                     <th>Редактировать</th>
                     <th>Удалить</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($page as $el)
+                @foreach($contact as $el)
                 <tr>
                     <th scope="row">{{$el->id}}</th>
-                    <td>{{$el->title}}</td>
-                    <td>{{$el->created_at->format('d/m/Y')}}</td>
+                    <td><i class="fas {{$el->icon}}"></i></td>
+                    <td>{{$el->value}}</td>
                     <td>
-                        <a href="{{route('pageEdit', $el->id)}}">
+                        <a href="{{route('contactEdit', $el->id)}}">
                             <button class="btn btn-primary"><i class="fas fa-cogs"></i></button>
                         </a>
                     </td>
@@ -43,11 +43,11 @@
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-body">
-                                        Вы действительно хотите удалить {{ $el->title }}
+                                        Вы действительно хотите удалить <i class="fas {{$el->icon}}"></i> {{$el->value}}?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-                                        <a href="{{route('PageDeleteSubmit', $el->id)}}">
+                                        <a href="{{route('contactDeleteSubmit', $el->id)}}">
                                             <button class="btn btn-danger">Удалить</button>
                                         </a>
                                     </div>

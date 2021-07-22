@@ -31,7 +31,7 @@ class NavPageController extends Controller
 
         $page->save();
 
-        return redirect()->route('pages')->with('success', 'Странциа добавлена');
+        return redirect()->route('pages')->with('success', 'Страница добавлена');
     }
 
     public function PageEdit($id)

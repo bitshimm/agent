@@ -36,10 +36,10 @@
 
                     </ul>
                 </div>
-                <div class="nav-item d-none d-lg-block contacts-head">
-                    <i class="fas fa-phone-alt"></i> +0 000-000-00-00 <br>
-                    <i class="fas fa-map-marker-alt"></i> Верхнее тушево 1 <br>
-                    <i class="far fa-envelope"></i> bestcompany@mail.ru
+                <div class="nav-item d-none d-lg-block contacts-head" style="max-width: 250px;">
+                    @foreach($contacts as $contact)
+                    <p><i class="fas {{ $contact->icon }}"></i>&nbsp;{{ $contact->value }}</p>
+                    @endforeach
                 </div>
             </div>
         </nav>
@@ -113,39 +113,22 @@
                         </div>
                     </div>
                 </div>
+                @if ($gallery->isNotEmpty())
                 <div class="row">
                     <div class="col-12 text-end my-3 text-white">
                         <h2 class="px-4">Фото</h2>
                     </div>
                     <div class="col-12 mb-3">
                         <div class="photo-slider px-4">
-                            <a class="photo-item" data-fancybox="gallery" href="/img/pexels-pixabay-144237.jpg">
-                                <img src="/img/pexels-pixabay-144237.jpg" alt="">
+                            @foreach($gallery as $photo)
+                            <a class="photo-item" data-fancybox="gallery" href="/storage/{{ $photo->path_to_file }}">
+                                <img src="/storage/{{ $photo->path_to_file }}" alt="">
                             </a>
-                            <a class="photo-item" data-fancybox="gallery" href="/img/pexels-pixabay-144237.jpg">
-                                <img src="/img/pexels-pixabay-144237.jpg" alt="">
-                            </a>
-                            <a class="photo-item" data-fancybox="gallery" href="/img/pexels-pixabay-144237.jpg">
-                                <img src="/img/pexels-pixabay-144237.jpg" alt="">
-                            </a>
-                            <a class="photo-item" data-fancybox="gallery" href="/img/pexels-pixabay-144237.jpg">
-                                <img src="/img/pexels-pixabay-144237.jpg" alt="">
-                            </a>
-                            <a class="photo-item" data-fancybox="gallery" href="/img/pexels-pixabay-144237.jpg">
-                                <img src="/img/pexels-pixabay-144237.jpg" alt="">
-                            </a>
-                            <a class="photo-item" data-fancybox="gallery" href="/img/pexels-pixabay-144237.jpg">
-                                <img src="/img/pexels-pixabay-144237.jpg" alt="">
-                            </a>
-                            <a class="photo-item" data-fancybox="gallery" href="/img/pexels-pixabay-144237.jpg">
-                                <img src="/img/pexels-pixabay-144237.jpg" alt="">
-                            </a>
-                            <a class="photo-item" data-fancybox="gallery" href="/img/pexels-pixabay-144237.jpg">
-                                <img src="/img/pexels-pixabay-144237.jpg" alt="">
-                            </a>
+                            @endforeach
                         </div>
                     </div>
                 </div>
+                @endif
             </div>
         </div>
         <div class="container mt-5 py-5">

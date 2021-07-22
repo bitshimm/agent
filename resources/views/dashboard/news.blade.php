@@ -7,9 +7,9 @@
         {{ session('success')}}
     </div>
     @endif
-    <h3>Страницы</h3>
+    <h3>Новости</h3>
     <div class="mb-3">
-        <a href="{{route('pageAdd')}}">
+        <a href="{{route('newsAdd')}}">
             <button class="btn btn-primary">Добавить</i></button>
         </a>
     </div>
@@ -25,13 +25,13 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($page as $el)
+                @foreach($news as $el)
                 <tr>
                     <th scope="row">{{$el->id}}</th>
                     <td>{{$el->title}}</td>
                     <td>{{$el->created_at->format('d/m/Y')}}</td>
                     <td>
-                        <a href="{{route('pageEdit', $el->id)}}">
+                        <a href="{{route('newsEdit', $el->id)}}">
                             <button class="btn btn-primary"><i class="fas fa-cogs"></i></button>
                         </a>
                     </td>
@@ -43,7 +43,7 @@
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-body">
-                                        Вы действительно хотите удалить {{ $el->title }}
+                                        Вы действительно хотите удалить новость "{{ $el->title }}"
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
@@ -54,9 +54,6 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="">
-
-                        </a>
                     </td>
                 </tr>
                 @endforeach
@@ -64,6 +61,5 @@
         </table>
     </div>
 </div>
-
 
 @endsection

@@ -1,27 +1,34 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container mt-3">
     @if(session('success'))
     <div class="alert alert-success">
         {{ session('success')}}
     </div>
     @endif
-    <h3>Страницы</h3>
+    <h3>Галлерея</h3>
     <div class="mb-3">
         <a href="{{route('galleryAdd')}}">
             <button class="btn btn-primary">Добавить</i></button>
         </a>
     </div>
+    @if ($gallery->isEmpty())
+    <h1 class="text-center">
+        Фотографий нет
+    </h1>
+    @endif
     <div class="row">
         @foreach($gallery as $el)
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="row gallery-item justify-content-center">
-                <div class="gallery-image-container">
-                    <img src="/storage/{{$el->path_to_file }}" class="">
+        <div class="col-lg-3 col-md-4 col-sm-12">
+            <a href="/storage/{{$el->path_to_file }}" data-fancybox="gallery">
+                <div class="gallery-item" style="background: url('/storage/{{$el->path_to_file }}');"></div>
+            </a>
+            <div class="gallery-item-desc d-flex justify-content-between mt-3">
+                <div class="text-left">
+                    {{$el->name }}
                 </div>
-                <div class="col-6">{{$el->name }}</div>
-                <div class="col-6 text-end">
+                <div class="text-right">
                     <a href="#" role="button" class="nav-link border border-light p-0 border-0" data-bs-toggle="modal" data-bs-target="#delModal{{ $el->id }}">
                         <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                     </a>
@@ -29,7 +36,7 @@
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-body">
-                                    Вы действительно хотите удалить {{ $el->title }}
+                                    Вы действительно хотите удалить "{{ $el->name }}"
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
