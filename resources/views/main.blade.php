@@ -64,6 +64,7 @@
                             </div>
                         </div>
                     </div>
+                    @if ($news->isNotEmpty())
                     <div class="col-lg-2 col-md-12 mb-4">
                         <div class="text-center news-title d-lg-none d-sm-block">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-triangle" viewBox="0 0 16 16">
@@ -72,12 +73,13 @@
                             <span>НОВОСТИ</span>
                         </div>
                         <div class="row justify-content-center">
+                            @foreach($news as $newsItem)
                             <div class="col-lg-12 col-md-3 col-sm-10 m-sm-2 m-lg-0 mb-2 news-item p-0">
-                                <div class="text-end news-head">
-                                    <img class="img-fluid" src="https://volga-flot.ru/wp-content/uploads/2018/02/tseny-i-raspisanie-kruizov-po-volge-iz-samary-v-2018-godu.jpg" alt="">
+                                <div class="text-end news-head mb-2 text-light">
+                                    <img class="img-fluid" src="/storage/{{ $newsItem->path_to_file }}" alt="">
                                     <span class="small p-2 news-date">11.11.1111</span>
                                 </div>
-                                <div class="text-center px-2">
+                                <div class="text-center px-2 text-light">
                                     <p>
                                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam illo et accusantium ex aspernatu
                                     </p>
@@ -85,11 +87,26 @@
                                 <div class="my-3 mx-4 news-line">
                                 </div>
                                 <div class="text-center mb-3 px-2">
-                                    <button type="button" class="btn btn-danger">Подробнее</button>
+                                    <a href="#" role="button" class="btn btn-danger btn-news-data" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $newsItem->id }}">Подробнее</a>
+                                </div>
+                                <div class="modal fade" id="exampleModal{{ $newsItem->id }}" tabindex="-1" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">{{ $newsItem->title }}</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                {!! $newsItem->description !!}
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
                     </div>
+                    @endif
                 </div>
                 <div class="row">
                     <div class="col-12 decription-site">

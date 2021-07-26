@@ -15,7 +15,10 @@
                     <label for="description" class="form-label">Описание</label>
                     <textarea class="form-controll text-editor" name="description" id="description"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Добавить</button>
+                <div class="justify-content-between d-flex">
+                    <button type="submit" class="btn btn-primary">Изменить</button>
+                    <a href="{{ url()->previous() }}" class="btn btn-default">Назад</a>
+                </div>
             </div>
         </div>
     </form>

@@ -15,7 +15,10 @@
                     <label for="image" class="form-label m-0">Картинка</label>
                     <input class="form-control" type="file" id="image" name="image" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Добавить</button>
+                <div class="justify-content-between d-flex">
+                    <button type="submit" class="btn btn-primary">Изменить</button>
+                    <a href="{{ url()->previous() }}" class="btn btn-default">Назад</a>
+                </div>
             </div>
         </div>
     </form>

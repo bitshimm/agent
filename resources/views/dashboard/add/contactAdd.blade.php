@@ -19,7 +19,10 @@
                 <input type="name" class="form-control" name="value" placeholder="Значение">
             </div>
             <div class="col-12 text-start">
-                <button type="submit" class="btn btn-primary">Добавить</button>
+                <div class="justify-content-between d-flex">
+                    <button type="submit" class="btn btn-primary">Изменить</button>
+                    <a href="{{ url()->previous() }}" class="btn btn-default">Назад</a>
+                </div>
             </div>
         </div>
     </form>
