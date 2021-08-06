@@ -20,7 +20,7 @@
             </div>
             <div class="col-12 text-start">
                 <div class="justify-content-between d-flex">
-                    <button type="submit" class="btn btn-primary">Изменить</button>
+                    <button type="submit" class="btn btn-primary">Добавить</button>
                     <a href="{{ url()->previous() }}" class="btn btn-default">Назад</a>
                 </div>
             </div>

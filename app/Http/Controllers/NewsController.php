@@ -30,8 +30,12 @@ class NewsController extends Controller
         $news->title = $req->input('title');
         $news->short_desc = $req->input('short_desc');
         $news->description = $req->input('description');
-        $news->path_to_file = $req->file('image')->storePublicly('uploads', 'public');
-
+        // if($req->file('image') == NULL){
+        //     $news->path_to_file ='';
+        // }else{
+            $news->path_to_file = $req->file('image')->storePublicly('uploads', 'public');
+        // }
+        
         $news->save();
 
         return redirect()->route('news')->with('success', 'Новость добавлена');

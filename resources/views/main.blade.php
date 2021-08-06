@@ -33,7 +33,6 @@
                             </div>
                         </div>
                         @endforeach
-
                     </ul>
                 </div>
                 <div class="nav-item d-none d-lg-block contacts-head" style="max-width: 250px;">
@@ -47,7 +46,7 @@
     <section class="site_bg_image">
         <div class="main mb-3">
             <div class="container">
-                <div class="row d-none d-lg-block pt-2">
+                <div class="row d-none d-lg-block pt-4">
                     <div class="col-2 offset-10 text-start text-white p-0">
                         <h4>НОВОСТИ</h4>
                     </div>
@@ -74,14 +73,14 @@
                         </div>
                         <div class="row justify-content-center">
                             @foreach($news as $newsItem)
-                            <div class="col-lg-12 col-md-3 col-sm-10 m-sm-2 m-lg-0 mb-2 news-item p-0">
+                            <div class="col-lg-12 col-md-3 col-sm-10 mt-sm-2 mt-lg-0 mb-2 news-item p-0 mx-sm-2">
                                 <div class="text-end news-head mb-2 text-light">
                                     <img class="img-fluid" src="/storage/{{ $newsItem->path_to_file }}" alt="">
                                     <span class="small p-2 news-date">11.11.1111</span>
                                 </div>
                                 <div class="text-center px-2 text-light">
                                     <p>
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam illo et accusantium ex aspernatu
+                                    {{ $newsItem->short_desc }}
                                     </p>
                                 </div class="px-2">
                                 <div class="my-3 mx-4 news-line">
@@ -97,6 +96,9 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
+                                                <div class="text-center">
+                                                    <img src="/storage/{{ $newsItem->path_to_file }}" alt="" class="img-fluid news-data-img">
+                                                </div>
                                                 {!! $newsItem->description !!}
                                             </div>
                                         </div>

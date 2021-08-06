@@ -87,6 +87,10 @@ header .nav-link:hover {
     border-bottom: 3px solid #fff;
 }
 
+.news-data-img{
+    border-radius: 15px;
+}
+
 .decription-site {
     border: 15px solid #fff;
     color: white;
@@ -209,7 +213,8 @@ header .nav-link:hover {
     padding: 10px;
     border-radius: 15px;
     background-size: cover;
-    background-position: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
     height: 200px;
 }
 

@@ -18,12 +18,26 @@
 <body class="body-img">
     @if(Auth::check())
     <nav class="navbar navbar-expand-lg p-0 shadow bg-dark admin-nav">
-        <div class="container">
+        <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarAdminPanel" aria-controls="navBarAdminPanel" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
             <div class="nav-item">
                 <a href="{{route('main')}}" role="button" class="nav-link {{ Request::is('/') ? 'active' : null }}"><i class="fas fa-home"></i>&nbsp;&nbsp;Главная</a>
+            </div>
+            <div class="nav-item d-block d-lg-none">
+                @guest
+                @else
+                <div class="nav-item m-2">
+                    <a href="{{route('logout')}}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();" role="button" class="px-3 nav-link text-center">
+                        <i class="fas fa-sign-out-alt d-sm-block d-md-block d-lg-none"></i>
+                    </a>
+                </div>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+                @endguest
             </div>
             <div class="collapse navbar-collapse justify-content-center" id="navBarAdminPanel">
                 <ul class="navbar-nav  mb-2 mb-lg-0">
@@ -41,13 +55,13 @@
                     </li>
                 </ul>
             </div>
-            <div class="nav-item">
+            <div class="nav-item d-none d-lg-block">
                 @guest
                 @else
                 <div class="nav-item m-2">
                     <a href="{{route('logout')}}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();" role="button" class="px-3 nav-link text-center">
-                        <i class="fas fa-sign-out-alt d-sm-block d-md-block d-lg-none"></i>
+                        
                         <span class="d-none d-lg-block"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Выйти</span>
                     </a>
                 </div>

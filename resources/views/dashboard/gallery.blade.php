@@ -20,15 +20,15 @@
     @endif
     <div class="row">
         @foreach($gallery as $el)
-        <div class="col-lg-3 col-md-4 col-sm-12">
+        <div class="col-lg-3 col-md-4 col-sm-12 mb-3">
             <a href="/storage/{{$el->path_to_file }}" data-fancybox="gallery">
-                <div class="gallery-item" style="background: url('/storage/{{$el->path_to_file }}');"></div>
+                <div class="gallery-item" style="background-image: url('/storage/{{$el->path_to_file }}');"></div>
             </a>
-            <div class="gallery-item-desc d-flex justify-content-between mt-3">
-                <div class="text-left">
-                    {{$el->name }}
+            <div class="gallery-item-desc mt-3 row">
+                <div class="col-8 text-left">
+                    <span>{{$el->name }}</span>
                 </div>
-                <div class="text-right">
+                <div class="col-4 text-right">
                     <a href="#" role="button" class="nav-link border border-light p-0 border-0" data-bs-toggle="modal" data-bs-target="#delModal{{ $el->id }}">
                         <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                     </a>

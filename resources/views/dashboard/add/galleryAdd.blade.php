@@ -16,7 +16,7 @@
                     <input class="form-control" type="file" id="image" name="image" required>
                 </div>
                 <div class="justify-content-between d-flex">
-                    <button type="submit" class="btn btn-primary">Изменить</button>
+                    <button type="submit" class="btn btn-primary">Добавить</button>
                     <a href="{{ url()->previous() }}" class="btn btn-default">Назад</a>
                 </div>
             </div>
