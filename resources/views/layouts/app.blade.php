@@ -22,7 +22,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarAdminPanel" aria-controls="navBarAdminPanel" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
-            <div class="nav-item">
+            <div class="nav-item text-center">
                 <a href="{{route('main')}}" role="button" class="nav-link {{ Request::is('/') ? 'active' : null }}"><i class="fas fa-home"></i>&nbsp;&nbsp;Главная</a>
             </div>
             <div class="nav-item d-block d-lg-none">
@@ -40,7 +40,7 @@
                 @endguest
             </div>
             <div class="collapse navbar-collapse justify-content-center" id="navBarAdminPanel">
-                <ul class="navbar-nav  mb-2 mb-lg-0">
+                <ul class="navbar-nav  mb-2 mb-lg-0 text-center">
                     <li class="nav-item m-2">
                         <a href="{{route('pages')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/pages*')) ? 'active' : '' }}"><i class="fas fa-file"></i>&nbsp;&nbsp;Страницы</a>
                     </li>
@@ -53,9 +53,18 @@
                     <li class="nav-item m-2">
                         <a href="{{route('news')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/news*')) ? 'active' : '' }}"><i class="fas fa-newspaper"></i>&nbsp;&nbsp;Новости</a>
                     </li>
+                    <li class="nav-item m-2">
+                        <a href="{{route('social')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/social*')) ? 'active' : '' }}"><i class="fas fa-link"></i>&nbsp;&nbsp;Соц.сети</a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a href="{{route('logotype')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/logotype*')) ? 'active' : '' }}"><i class="far fa-smile-wink"></i>&nbsp;&nbsp;Логотип</a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a href="{{route('aboutUs')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/aboutUs*')) ? 'active' : '' }}"><i class="fas fa-address-card"></i>&nbsp;&nbsp;О нас</a>
+                    </li>
                 </ul>
             </div>
-            <div class="nav-item d-none d-lg-block">
+            <div class="nav-item d-none d-lg-block text-center">
                 @guest
                 @else
                 <div class="nav-item m-2">

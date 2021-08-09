@@ -9,9 +9,22 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="">NavBar</a>
+                <a class="navbar-brand" href="{{route('main')}}">
+                    @foreach($logotype as $logo)
+
+                    <img src="/storage/{{ $logo->path_to_file }}" alt="" style="height: 36px;">
+
+                    @endforeach
+
+                </a>
                 <div class="nav-item d-sm-block d-md-block d-lg-none header-md-phone">
-                    <i class="fas fa-phone-alt fa-lg"></i>
+                    @foreach($contacts as $contact)
+
+                    @if($contact->icon == "fa-phone-alt")
+
+                    <a href="tel:{{ $contact->value }}"><i class="fas fa-phone-alt fa-lg"></i></a>
+                    @endif
+                    @endforeach
                 </div>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo03">
                     <ul class="navbar-nav  mb-2 mb-lg-0">
@@ -37,7 +50,21 @@
                 </div>
                 <div class="nav-item d-none d-lg-block contacts-head" style="max-width: 250px;">
                     @foreach($contacts as $contact)
+
+                    @if($contact->icon == "fa-phone-alt")
+
+                    <p><a href="tel:{{ $contact->value }}"><i class="fas {{ $contact->icon }}"></i>&nbsp;{{ $contact->value }}</a></p>
+
+                    @elseif($contact->icon == "fa-envelope")
+
+                    <p><a href="mailto:{{ $contact->value }}"><i class="fas {{ $contact->icon }}"></i>&nbsp;{{ $contact->value }}</a></p>
+
+                    @elseif($contact->icon == "fa-map-marker-alt" || $contact->icon == "fa-clock")
+
+                    @else
                     <p><i class="fas {{ $contact->icon }}"></i>&nbsp;{{ $contact->value }}</p>
+                    @endif
+
                     @endforeach
                 </div>
             </div>
@@ -46,13 +73,16 @@
     <section class="site_bg_image">
         <div class="main mb-3">
             <div class="container">
+
                 <div class="row d-none d-lg-block pt-4">
                     <div class="col-2 offset-10 text-start text-white p-0">
+                        @if ($news->isNotEmpty())
                         <h4>НОВОСТИ</h4>
+                        @endif
                     </div>
                 </div>
                 <div class="row pt-sm-3 pt-lg-0">
-                    <div class="col-lg-10 col-md-12 mb-4">
+                    <div class="@if ($news->isNotEmpty()) col-lg-10 @else col-lg-12 @endif col-md-12 mb-4">
                         <div class="filter-site pt-3 pb-5 px-2">
                             <div class="text-white row my-4">
                                 <div class="col-5 text-end"><i class="fas fa-search fa-2x"></i></div>
@@ -80,7 +110,7 @@
                                 </div>
                                 <div class="text-center px-2 text-light">
                                     <p>
-                                    {{ $newsItem->short_desc }}
+                                        {{ $newsItem->title }}
                                     </p>
                                 </div class="px-2">
                                 <div class="my-3 mx-4 news-line">
@@ -110,28 +140,50 @@
                     </div>
                     @endif
                 </div>
-                <div class="row">
+                @if ($aboutUs->isNotEmpty())
+                <div class="row px-3">
                     <div class="col-12 decription-site">
+
+                        @foreach($aboutUs as $about)
+
                         <div class="row p-4">
                             <div class="col-12">
                                 <div class="text-center mb-3">
-                                    <h2>Круиз - это выгодно</h2>
+                                    <h2 class="about-us-title">{{ $about->title }}</h2>
                                 </div>
-                                <div>
+                                <div class="text-white">
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi ea quasi, eveniet at saepe omnis consequuntur? Voluptatem repellendus nobis consectetur aliquid soluta adipisci. Cum aut doloribus officia dolore, magni consequuntur!
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur officiis accusamus sequi voluptatibus voluptatum? Magni, fugit adipisci. Modi, inventore odio! Reiciendis, maiores sunt. Delectus esse reprehenderit qui, tempore ipsa impedit.
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat error eveniet animi dolores odio eum officia culpa ipsa repellat deserunt voluptatum quae est placeat ad, unde rerum consequuntur alias cumque!
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti fugit, mollitia in inventore atque minima illo vel itaque, facere nihil illum sunt quibusdam exercitationem asperiores quasi nostrum eum odio aperiam!
+                                        {{ $about->short_desc }}
                                     </p>
                                 </div>
-                                <div class="text-center">
-                                    <button type="button" class="btn btn-danger">Читать больше »</button>
+                                @if(!empty($about->description))
+                                <div>
+                                    <div class="text-center">
+                                        <a href="#" role="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $about->id }}">Читать далее</a>
+                                    </div>
+                                    <div class="modal fade" id="exampleModal{{ $about->id }}" tabindex="-1" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">{{ $about->title }}</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    {!! $about->description !!}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                @endif
                             </div>
                         </div>
+
+                        @endforeach
+
                     </div>
                 </div>
+                @endif
                 @if ($gallery->isNotEmpty())
                 <div class="row">
                     <div class="col-12 text-end my-3 text-white">
@@ -167,39 +219,51 @@
                                 <div class="f-contact-item">
                                     <a class="navbar-brand ml-4" href="">NavBar</a>
                                 </div>
+                                @foreach($contacts as $contact)
+                                @if($contact->icon == "fa-phone-alt")
                                 <div class="f-contact-item">
-                                    <i class="fas fa-phone-alt"></i>
-                                    <span class="h4"> +7 999 999 99 99</span>
+                                    <a href="tel:{{ $contact->value }}"><i class="fas {{ $contact->icon }}"></i>&nbsp;<span class="h4">{{ $contact->value }}</span></a>
+
                                 </div>
+                                @elseif($contact->icon == "fa-envelope")
+
                                 <div class="f-contact-item">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>г. Москва, Красный переулок д.1</span>
+                                    <a href="mailto:{{ $contact->value }}"><i class="fas {{ $contact->icon }}"></i>&nbsp;<span>{{ $contact->value }}</span></a>
+
                                 </div>
+
+                                @elseif($contact->icon == "fa-clock")
                                 <div class="f-contact-item">
-                                    <i class="far fa-envelope"></i>
-                                    <span>touragency@mail.ru</span>
-                                </div>
-                                <div class="f-contact-item">
-                                    <i class="far fa-clock"></i>
+                                    <i class="far {{ $contact->icon }}"></i>
                                     <span class="fw-bold">
                                         Режим работы:&nbsp;
                                     </span>
                                     <span>
-                                        Пн-Пт: 9:00 - 18:00, Сб-Вс: выходной
+                                        {{ $contact->value }}
                                     </span>
                                 </div>
+
+
+                                @else
+                                <p><i class="fas {{ $contact->icon }}"></i>&nbsp;{{ $contact->value }}</p>
+                                @endif
+                                @endforeach
+
+                                @if ($social->isNotEmpty())
                                 <div class="f-contact-item">
-                                    <i class="far fa-comment"></i>
-                                    <span class="fw-bold">
-                                        Мы в соцсетях:&nbsp;
-                                    </span>
-                                    <a class="btn btn-primary" href="#" role="button"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-primary" href="#" role="button"><i class="fab fa-vk"></i></a>
-                                    <a class="btn btn-primary" href="#" role="button"><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-primary" href="#" role="button"><i class="fab fa-odnoklassniki"></i></a>
-                                    <a class="btn btn-primary" href="#" role="button"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-primary" href="#" role="button"><i class="fab fa-youtube"></i></a>
+                                    <div class="f-contact-links-items">
+                                        <i class="far fa-comment"></i>
+                                        <span class="fw-bold">
+                                            Мы в соцсетях:&nbsp;
+                                        </span>
+                                        @foreach($social as $soc)
+                                        <a class="btn btn-primary" href="{{ $soc->link }}" role="button"><i class="fab {{ $soc->social_icon }}"></i></a>
+
+                                        @endforeach
+                                    </div>
+
                                 </div>
+                                @endif
                             </div>
                         </div>
                         <div class="col-lg-4"></div>

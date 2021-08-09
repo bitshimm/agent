@@ -28,13 +28,12 @@ class NewsController extends Controller
     {
         $news = new News();
         $news->title = $req->input('title');
-        $news->short_desc = $req->input('short_desc');
         $news->description = $req->input('description');
-        // if($req->file('image') == NULL){
-        //     $news->path_to_file ='';
-        // }else{
+        if($req->file('image') == NULL){
+            $news->path_to_file ='';
+        }else{
             $news->path_to_file = $req->file('image')->storePublicly('uploads', 'public');
-        // }
+        }
         
         $news->save();
 
@@ -51,7 +50,6 @@ class NewsController extends Controller
     {
         $news = News::find($id);
         $news->title = $req->input('title');
-        $news->short_desc = $req->input('short_desc');
         $news->description = $req->input('description');
 
         $news->save();
