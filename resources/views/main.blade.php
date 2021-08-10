@@ -30,9 +30,9 @@
                     <ul class="navbar-nav  mb-2 mb-lg-0">
                         @foreach ($navPage as $page)
                         <li class="nav-item m-2">
-                            <a href="#" role="button" class="nav-link border border-light" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $page->id }}">{{ $page->title }}</a>
+                            <a href="#" role="button" class="nav-link border border-light" data-bs-toggle="modal" data-bs-target="#exampleModalPage{{ $page->id }}">{{ $page->title }}</a>
                         </li>
-                        <div class="modal fade" id="exampleModal{{ $page->id }}" tabindex="-1" aria-hidden="true">
+                        <div class="modal fade" id="exampleModalPage{{ $page->id }}" tabindex="-1" aria-hidden="true">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -116,9 +116,9 @@
                                 <div class="my-3 mx-4 news-line">
                                 </div>
                                 <div class="text-center mb-3 px-2">
-                                    <a href="#" role="button" class="btn btn-danger btn-news-data" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $newsItem->id }}">Подробнее</a>
+                                    <a href="#" role="button" class="btn btn-danger btn-news-data" data-bs-toggle="modal" data-bs-target="#exampleModalNews{{ $newsItem->id }}">Подробнее</a>
                                 </div>
-                                <div class="modal fade" id="exampleModal{{ $newsItem->id }}" tabindex="-1" aria-hidden="true">
+                                <div class="modal fade" id="exampleModalNews{{ $newsItem->id }}" tabindex="-1" aria-hidden="true">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -159,9 +159,9 @@
                                 @if(!empty($about->description))
                                 <div>
                                     <div class="text-center">
-                                        <a href="#" role="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $about->id }}">Читать далее</a>
+                                        <a href="#" role="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModalAboutUs{{ $about->id }}">Читать далее</a>
                                     </div>
-                                    <div class="modal fade" id="exampleModal{{ $about->id }}" tabindex="-1" aria-hidden="true">
+                                    <div class="modal fade" id="exampleModalAboutUs{{ $about->id }}" tabindex="-1" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
                                                 <div class="modal-header">
