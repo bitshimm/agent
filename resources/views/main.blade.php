@@ -217,7 +217,14 @@
                                     <h3>Наши контакты</h3>
                                 </div>
                                 <div class="f-contact-item">
-                                    <a class="navbar-brand ml-4" href="">NavBar</a>
+                                    <a class="navbar-brand ml-4" href="{{route('main')}}">
+                                        @foreach($logotype as $logo)
+
+                                        <img src="/storage/{{ $logo->path_to_file }}" alt="" style="height: 36px;">
+
+                                        @endforeach
+
+                                    </a>
                                 </div>
                                 @foreach($contacts as $contact)
                                 @if($contact->icon == "fa-phone-alt")

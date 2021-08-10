@@ -8,7 +8,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 mb-3">
                 <select class="form-select" aria-label="Default select example" name="social_icon" required>
-                    <option selected>Выберите иконку</option>
+                    <option selected value="" disabled>Выберите иконку</option>
                     <option value="fa-facebook-f">Facebook</option>
                     <option value="fa-vk">Vk</option>
                     <option value="fa-instagram">Instagram</option>
