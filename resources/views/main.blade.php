@@ -252,7 +252,9 @@
 
 
                                 @else
-                                <p><i class="fas {{ $contact->icon }}"></i>&nbsp;{{ $contact->value }}</p>
+                                <div class="f-contact-item">
+                                    <i class="far {{ $contact->icon }}"></i>&nbsp;&nbsp;<span>{{ $contact->value }}</span>
+                                </div>
                                 @endif
                                 @endforeach
 
