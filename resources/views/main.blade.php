@@ -257,7 +257,7 @@
                                             Мы в соцсетях:&nbsp;
                                         </span>
                                         @foreach($social as $soc)
-                                        <a class="btn btn-primary" href="{{ $soc->link }}" role="button"><i class="fab {{ $soc->social_icon }}"></i></a>
+                                        <a class="btn btn-primary" href="{{ $soc->link }}" role="button" target="_blank"><i class="fab {{ $soc->social_icon }}"></i></a>
 
                                         @endforeach
                                     </div>
