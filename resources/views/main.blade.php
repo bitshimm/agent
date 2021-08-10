@@ -106,7 +106,7 @@
                             <div class="col-lg-12 col-md-3 col-sm-10 mt-sm-2 mt-lg-0 mb-2 news-item p-0 mx-sm-2">
                                 <div class="text-end news-head mb-2 text-light">
                                     <img class="img-fluid" src="/storage/{{ $newsItem->path_to_file }}" alt="">
-                                    <span class="small p-2 news-date">11.11.1111</span>
+                                    <span class="small p-2 news-date">{{ $newsItem->created_at->format('d/m/Y') }}</span>
                                 </div>
                                 <div class="text-center px-2 text-light">
                                     <p>
