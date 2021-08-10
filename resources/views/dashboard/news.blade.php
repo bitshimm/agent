@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-                                        <a href="{{route('PageDeleteSubmit', $el->id)}}">
+                                        <a href="{{route('NewsDeleteSubmit', $el->id)}}">
                                             <button class="btn btn-danger">Удалить</button>
                                         </a>
                                     </div>
