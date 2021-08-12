@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="/css/slick.css">
     <link rel="stylesheet" href="/css/slick-theme.css">
+    @foreach ($themes as $theme)
+    @if($theme->visibility == "1")
+    @if($theme->name == "main")
+    @endif
+    @endif
+    @endforeach
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="/plugins/summernote/summernote-lite.min.css">

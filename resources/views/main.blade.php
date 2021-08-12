@@ -73,13 +73,16 @@
     <section class="site_bg_image">
         <div class="main mb-3">
             <div class="container">
-
-                <div class="row d-none d-lg-block pt-4">
+                <div class="row py-2"></div>
+                <div class="row d-none d-lg-block">
                     <div class="col-2 offset-10 text-start text-white p-0">
                         @if ($news->isNotEmpty())
                         <h4>НОВОСТИ</h4>
                         @endif
                     </div>
+                </div>
+                <div style="position: absolute; height:100px; width:100px; top:100px; left:0; background-color:red;">
+
                 </div>
                 <div class="row pt-sm-3 pt-lg-0">
                     <div class="@if ($news->isNotEmpty()) col-lg-10 @else col-lg-12 @endif col-md-12 mb-4">
