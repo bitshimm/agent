@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="/css/slick.css">
     <link rel="stylesheet" href="/css/slick-theme.css">
-    @foreach ($themes as $theme)
+    @foreach ($select_themes as $theme)
     @if($theme->visibility == "1")
     @if($theme->name == "main")
     @endif
@@ -67,6 +67,9 @@
                     </li>
                     <li class="nav-item m-2">
                         <a href="{{route('aboutUs')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/aboutUs*')) ? 'active' : '' }}"><i class="fas fa-address-card"></i>&nbsp;&nbsp;О нас</a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a href="{{route('themes')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/themes*')) ? 'active' : '' }}"><i class="fas fa-address-card"></i>&nbsp;&nbsp;О нас</a>
                     </li>
                 </ul>
             </div>

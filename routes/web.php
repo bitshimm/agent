@@ -85,4 +85,8 @@ Route::post('/admin/dashboard/logotype/add', 'LogotypeController@LogotypeAddSubm
 
 Route::get('/admin/data/logotype/delete/{id}', 'LogotypeController@LogotypeDeleteSubmit')->name('logotypeDeleteSubmit')->middleware('auth');
 
+
+Route::get('/admin/dashboard/themes', 'ThemesController@Themes')->name('themes')->middleware('auth');
+
+
 Auth::routes();

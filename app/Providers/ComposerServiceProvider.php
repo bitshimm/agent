@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Theme;
+use App\Models\SelectTheme;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
@@ -27,7 +27,7 @@ class ComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer('layouts.app', function($view) {
-            $view->with(['themes' => Theme::All()]);
+            $view->with(['select_themes' => SelectTheme::All()]);
          });
     }
 }

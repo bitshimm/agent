@@ -262,17 +262,20 @@ header .nav-link:hover {
     height: 200px;
     width: 300px;
 }
+
 .contacts-head p {
     margin: 0;
 }
+
 .contacts-head a {
     color: black;
     text-decoration: none;
 }
+
 .contacts-head a:hover {
     color: #00a2b8;
 }
 
-.about-us-title{
+.about-us-title {
     color: #5bdaeb;
 }

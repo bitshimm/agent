@@ -16,6 +16,7 @@ class CreateThemesTable extends Migration
         Schema::create('themes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('path_to_image');
             $table->timestamps();
         });
     }

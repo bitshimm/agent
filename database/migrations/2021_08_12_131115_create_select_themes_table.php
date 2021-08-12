@@ -15,7 +15,7 @@ class CreateSelectThemesTable extends Migration
     {
         Schema::create('select_themes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('theme_name');
+            $table->string('select_theme_name');
             $table->timestamps();
         });
     }
