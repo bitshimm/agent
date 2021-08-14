@@ -11,12 +11,11 @@
     <link rel="stylesheet" href="/css/slick.css">
     <link rel="stylesheet" href="/css/slick-theme.css">
     @foreach ($select_themes as $theme)
-    @if($theme->visibility == "1")
-    @if($theme->name == "main")
-    @endif
+    @if($theme->select_theme_name == "силестия")
+    <link rel="stylesheet" href="/css/main.css">
     @endif
     @endforeach
-    <link rel="stylesheet" href="/css/main.css">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="/plugins/summernote/summernote-lite.min.css">
 </head>
@@ -68,9 +67,11 @@
                     <li class="nav-item m-2">
                         <a href="{{route('aboutUs')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/aboutUs*')) ? 'active' : '' }}"><i class="fas fa-address-card"></i>&nbsp;&nbsp;О нас</a>
                     </li>
+                    @foreach ($select_themes as $select_theme)
                     <li class="nav-item m-2">
-                        <a href="{{route('themes')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/themes*')) ? 'active' : '' }}"><i class="fas fa-address-card"></i>&nbsp;&nbsp;О нас</a>
+                        <a href="{{route('selectThemeEdit', $select_theme->id)}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/themes*')) ? 'active' : '' }}"><i class="fas fa-address-card"></i>&nbsp;&nbsp;О нас</a>
                     </li>
+                    @endforeach
                 </ul>
             </div>
             <div class="nav-item d-none d-lg-block text-center">

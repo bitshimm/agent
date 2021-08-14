@@ -26,7 +26,7 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('layouts.app', function($view) {
+        View::composer(['layouts.app'], function($view) {
             $view->with(['select_themes' => SelectTheme::All()]);
          });
     }
