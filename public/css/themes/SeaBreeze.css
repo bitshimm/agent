@@ -1,0 +1,79 @@
+.site_bg_image{
+    background: url('/img/BG_5.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+
+header .nav-link {
+    color: #000;
+}
+
+.main .navbar i {
+    color: #00a2b8;
+}
+
+.navbar-toggler {
+    color: #fff;
+}
+
+header .nav-link:hover {
+    color: #00a2b8;
+    border-bottom: 2px solid #00a2b8;
+}
+
+.filter-site {
+    border: 15px solid #5ed8ed;
+}
+
+.news-title span {
+    color: #fff;
+}
+
+.news-item .btn-news-data {
+    background-color: #d20117;
+    color: #fff;
+}
+
+.news-item {
+    background-color: #009eb7;
+}
+
+.decription-site {
+    border: 15px solid #fff;
+    background-color: #0b3647;
+}
+.about-us-btn{
+    background-color: #d20117;
+    color: #fff;
+}
+
+.photo-slider .btn-prev,
+.photo-slider .btn-next{
+    background-color: #d20117;
+    color: #fff;
+}
+.photo-item {
+    border: 15px solid #0096ae;
+}
+
+.footer {
+    background-color: #5ed9eb;
+}
+
+.bi-triangle {
+    color: #0096ae;
+}
+
+.f-contact-item a {
+    color: black;
+}
+
+.f-contact-links-items a {
+    color: #fff;
+    background-color: #0b3647;
+}
+.f-contact-links-items a:hover {
+    background-color: #d20117;
+    color: #fff;
+}

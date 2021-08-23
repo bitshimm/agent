@@ -10,9 +10,13 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="/css/slick.css">
     <link rel="stylesheet" href="/css/slick-theme.css">
-    @foreach ($select_themes as $theme)
-    @if($theme->select_theme_name == "силестия")
     <link rel="stylesheet" href="/css/main.css">
+    @foreach ($select_themes as $theme)
+    @if($theme->select_theme_name == "Sea Breeze")
+    <link rel="stylesheet" href="/css/themes/SeaBreeze.css">
+    @endif
+    @if($theme->select_theme_name == "Sunset")
+    <link rel="stylesheet" href="/css/themes/Sunset.css">
     @endif
     @endforeach
     

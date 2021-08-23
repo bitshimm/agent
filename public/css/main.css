@@ -1,18 +1,5 @@
 .site_bg_image {
-    background-color: #0b3647;
-    background: url(/img/BG_5.png);
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
     min-height: 100vh;
-}
-
-header {
-    background-color: #fff;
-}
-
-header .nav-link {
-    color: black;
 }
 
 .header-md-phone i {
@@ -20,21 +7,10 @@ header .nav-link {
 }
 
 .navbar i {
-    color: #00a2b8;
     width: 16px;
 }
 
-.navbar-toggler {
-    color: white;
-}
-
-header .nav-link:hover {
-    color: #00a2b8;
-    border-bottom: 2px solid #00a2b8;
-}
-
 .filter-site {
-    border: 15px solid #5ed8ed;
     background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -47,17 +23,11 @@ header .nav-link:hover {
 }
 
 .news-title span {
-    color: #fff;
     vertical-align: middle;
 }
 
 .news-item {
-    background-color: #009eb7;
     font-weight: 500;
-}
-
-.news-item:hover {
-    background-color: #5ed9eb;
 }
 
 .main .btn {
@@ -92,15 +62,9 @@ header .nav-link:hover {
     border-radius: 15px;
 }
 
-.decription-site {
-    border: 15px solid #fff;
-    background-color: #0b3647;
-}
-
 .photo-item {
     overflow: hidden;
     margin: 0 5px;
-    border: 15px solid #0096ae;
     height: 200px;
     width: 200px;
     position: relative;
@@ -166,14 +130,9 @@ header .nav-link:hover {
     right: 0;
 }
 
-.footer {
-    background-color: #5ed9eb;
-}
-
 .bi-triangle {
     transform: rotate(90deg);
     transform-origin: center center;
-    color: #0096ae;
     position: relative;
     top: 50%;
     left: 0;
@@ -191,12 +150,7 @@ header .nav-link:hover {
 }
 
 .f-contact-item a {
-    color: black;
     text-decoration: none;
-}
-
-.f-contact-links-items a {
-    color: #fff;
 }
 
 .f-contact-item i:first-child {

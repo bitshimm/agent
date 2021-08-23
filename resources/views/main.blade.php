@@ -2,8 +2,8 @@
 
 @section('content')
 
-<div class="main">
-    <header class="bg-light">
+<div class="main site_bg_image">
+    <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,7 +70,7 @@
             </div>
         </nav>
     </header>
-    <section class="site_bg_image">
+    <section>
         <div class="main mb-3">
             <div class="container">
                 <div class="row py-2"></div>
@@ -119,7 +119,7 @@
                                 <div class="my-3 mx-4 news-line">
                                 </div>
                                 <div class="text-center mb-3 px-2">
-                                    <a href="#" role="button" class="btn btn-danger btn-news-data" data-bs-toggle="modal" data-bs-target="#exampleModalNews{{ $newsItem->id }}">Подробнее</a>
+                                    <a href="#" role="button" class="btn btn-news-data" data-bs-toggle="modal" data-bs-target="#exampleModalNews{{ $newsItem->id }}">Подробнее</a>
                                 </div>
                                 <div class="modal fade" id="exampleModalNews{{ $newsItem->id }}" tabindex="-1" aria-hidden="true">
                                     <div class="modal-dialog modal-lg">
@@ -162,7 +162,7 @@
                                 @if(!empty($about->description))
                                 <div>
                                     <div class="text-center">
-                                        <a href="#" role="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModalAboutUs{{ $about->id }}">Читать далее</a>
+                                        <a href="#" role="button" class="btn about-us-btn" data-bs-toggle="modal" data-bs-target="#exampleModalAboutUs{{ $about->id }}">Читать далее</a>
                                     </div>
                                     <div class="modal fade" id="exampleModalAboutUs{{ $about->id }}" tabindex="-1" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
@@ -269,7 +269,7 @@
                                             Мы в соцсетях:&nbsp;
                                         </span>
                                         @foreach($social as $soc)
-                                        <a class="btn btn-primary" href="{{ $soc->link }}" role="button" target="_blank"><i class="fab {{ $soc->social_icon }}"></i></a>
+                                        <a class="btn" href="{{ $soc->link }}" role="button" target="_blank"><i class="fab {{ $soc->social_icon }}"></i></a>
 
                                         @endforeach
                                     </div>

@@ -1,7 +1,7 @@
 $(function() {
     $(".photo-slider").slick({
-        prevArrow: '<button type="button" class="btn btn-danger btn-prev"><i class="fas fa-chevron-left"></i></button>',
-        nextArrow: '<button type="button" class="btn btn-danger btn-next"><i class="fas fa-chevron-right"></i></button>',
+        prevArrow: '<button type="button" class="btn btn-prev"><i class="fas fa-chevron-left"></i></button>',
+        nextArrow: '<button type="button" class="btn btn-next"><i class="fas fa-chevron-right"></i></button>',
         infinite: true,
         slidesToShow: 5,
         slidesToScroll: 1,
