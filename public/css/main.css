@@ -1,5 +1,16 @@
 .site_bg_image {
     min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+
+header .nav-link {
+    border: 2px solid transparent;
+    border-radius: 20px;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    font-weight: 500;
 }
 
 .header-md-phone i {
@@ -120,6 +131,7 @@
     top: 50%;
     z-index: 1;
     margin-top: -1em;
+    padding: 8px 16px;
 }
 
 .btn-prev {
@@ -222,14 +234,5 @@
 }
 
 .contacts-head a {
-    color: black;
     text-decoration: none;
-}
-
-.contacts-head a:hover {
-    color: #00a2b8;
-}
-
-.about-us-title {
-    color: #5bdaeb;
 }

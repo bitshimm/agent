@@ -1,0 +1,98 @@
+.site_bg_image{
+    background-image: url('/img/LightAirTheme.png');
+}
+
+header .nav-link {
+    color: #2b4e74;
+}
+
+.contacts-head a {
+    color: #2b4e74;
+}
+
+.contacts-head a:hover {
+    color: #2b4e74;
+}
+
+.about-us-title {
+    color: #799eec;  
+}
+
+.main .navbar i {
+    color: #2b4e74;
+}
+
+.navbar-toggler {
+    color: #2b4e74;
+}
+
+header .nav-link:hover {
+    color: #2b4e74;
+    border: 2px solid #2b4e74;
+}
+
+.filter-site {
+    border: 15px solid #76b1ff;
+}
+
+.novosti{
+    color: #2b4e74;
+}
+
+.news-title span {
+    color: #fff;
+}
+
+.news-item .btn-news-data {
+    background-color: #50fff6;
+    color: #2b4e74;
+}
+
+.news-item {
+    background-color: #2b4e76;
+}
+
+.decription-site {
+    border: 15px solid #789fea;
+    background-color: #2b4e76;
+}
+
+.about-us-btn{
+    background-color: #50fff6;
+    color: #2b4e74;
+}
+.foto{
+    color: #2b4e74;
+}
+.photo-slider .btn-prev,
+.photo-slider .btn-next{
+    background-color: #50fff6;
+    color: #2b4e74;
+}
+.photo-item {
+    border: 15px solid #2c4e74;
+}
+.photo-item:hover{
+    border-color: #7494c5;
+}
+.footer {
+    background-color: #2b4e76;
+    color: #fff;
+}
+
+.bi-triangle {
+    color: #789fea;
+}
+
+.f-contact-item a {
+    color: #fff;
+}
+
+.f-contact-links-items a {
+    color: #2b4e76;
+    background-color: #789fea;
+}
+.f-contact-links-items a:hover {
+    background-color: #50fff6;
+    color: #2b4e76;
+}

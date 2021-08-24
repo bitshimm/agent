@@ -1,12 +1,23 @@
-.site_bg_image{
-    background: url('/img/BG_5.png');
+.sea-breeze-bg{
+    background-image: url('/img/BG_5.png');
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
 }
+.header-light{
+    background-color: #fff;
+}
 
 header .nav-link {
     color: #000;
+}
+
+.contacts-head a {
+    color: #000;
+}
+
+.contacts-head a:hover {
+    color: #00a2b8;
 }
 
 .main .navbar i {
@@ -18,8 +29,8 @@ header .nav-link {
 }
 
 header .nav-link:hover {
-    color: #00a2b8;
-    border-bottom: 2px solid #00a2b8;
+    color: #000;
+    border: 2px solid #00a2b8;
 }
 
 .filter-site {
@@ -42,6 +53,10 @@ header .nav-link:hover {
 .decription-site {
     border: 15px solid #fff;
     background-color: #0b3647;
+}
+
+.about-us-title {
+    color: #009eb7;  
 }
 .about-us-btn{
     background-color: #d20117;

@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="main site_bg_image">
-    <header>
+    <header class="header-light">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@
                     <ul class="navbar-nav  mb-2 mb-lg-0">
                         @foreach ($navPage as $page)
                         <li class="nav-item m-2">
-                            <a href="#" role="button" class="nav-link border border-light" data-bs-toggle="modal" data-bs-target="#exampleModalPage{{ $page->id }}">{{ $page->title }}</a>
+                            <b><a href="#" role="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModalPage{{ $page->id }}">{{ $page->title }}</a></b>
                         </li>
                         <div class="modal fade" id="exampleModalPage{{ $page->id }}" tabindex="-1" aria-hidden="true">
                             <div class="modal-dialog modal-lg">
@@ -70,14 +70,14 @@
             </div>
         </nav>
     </header>
-    <section>
+    <section class="sea-breeze-bg">
         <div class="main mb-3">
             <div class="container">
                 <div class="row py-2"></div>
                 <div class="row d-none d-lg-block">
                     <div class="col-2 offset-10 text-start text-white p-0">
                         @if ($news->isNotEmpty())
-                        <h4>НОВОСТИ</h4>
+                        <h4 class="novosti">НОВОСТИ</h4>
                         @endif
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-triangle" viewBox="0 0 16 16">
                                 <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z" />
                             </svg>
-                            <span>НОВОСТИ</span>
+                            <span class="novosti">НОВОСТИ</span>
                         </div>
                         <div class="row justify-content-center">
                             @foreach($news as $newsItem)
@@ -190,7 +190,7 @@
                 @if ($gallery->isNotEmpty())
                 <div class="row">
                     <div class="col-12 text-end my-3 text-white">
-                        <h2 class="px-4">Фото</h2>
+                        <h2 class="px-4 foto">Фото</h2>
                     </div>
                     <div class="col-12 mb-3">
                         <div class="photo-slider px-4">

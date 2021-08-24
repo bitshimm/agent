@@ -18,6 +18,18 @@
     @if($theme->select_theme_name == "Sunset")
     <link rel="stylesheet" href="/css/themes/Sunset.css">
     @endif
+    @if($theme->select_theme_name == "Paradise Beach")
+    <link rel="stylesheet" href="/css/themes/ParadiseBeach.css">
+    @endif
+    @if($theme->select_theme_name == "Blue Sky")
+    <link rel="stylesheet" href="/css/themes/BlueSky.css">
+    @endif
+    @if($theme->select_theme_name == "Blue Air")
+    <link rel="stylesheet" href="/css/themes/BlueAir.css">
+    @endif
+    @if($theme->select_theme_name == "Light Air")
+    <link rel="stylesheet" href="/css/themes/LightAir.css">
+    @endif
     @endforeach
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
@@ -111,6 +123,7 @@
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script src="/plugins/summernote/summernote-lite.min.js"></script>
     <script src="/plugins/summernote/lang/summernote-ru-RU.js"></script>
+    
     <script>
         $(function() {
             $('.text-editor').summernote({

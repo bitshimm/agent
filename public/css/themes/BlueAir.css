@@ -1,0 +1,90 @@
+.site_bg_image{
+    background-image: url('/img/BlueAirTheme.png');
+}
+
+header .nav-link {
+    color: #fff;
+}
+
+.contacts-head a {
+    color: #fff;
+}
+
+.contacts-head a:hover {
+    color: #6da1af;
+}
+
+.about-us-title {
+    color: #5b95e9;  
+}
+
+.main .navbar i {
+    color: #6da1af;
+}
+
+.navbar-toggler {
+    color: #fff;
+}
+
+header .nav-link:hover {
+    color: #fff;
+    border: 2px solid #6aa2af;
+}
+
+.filter-site {
+    border: 15px solid #77b0ff;
+}
+
+.news-title span {
+    color: #fff;
+}
+
+.news-item .btn-news-data {
+    background-color: #ff9c00;
+    color: #000;
+}
+
+.news-item {
+    background-color: #77b0ff;
+}
+
+.decription-site {
+    border: 15px solid #fff;
+    background-color: #040410;
+}
+
+.about-us-btn{
+    background-color: #ff9c00;
+    color: #000;
+}
+
+.photo-slider .btn-prev,
+.photo-slider .btn-next{
+    background-color: #ffde41;
+    color: #000;
+}
+.photo-item {
+    border: 15px solid #78b1ff;
+}
+
+.footer {
+    background-color: #0064b2;
+    color: #fff;
+}
+
+.bi-triangle {
+    color: #fff;
+}
+
+.f-contact-item a {
+    color: #fff;
+}
+
+.f-contact-links-items a {
+    color: #fff;
+    background-color: #000;
+}
+.f-contact-links-items a:hover {
+    background-color: #ff9c00;
+    color: #fff;
+}

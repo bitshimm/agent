@@ -1,12 +1,21 @@
 .site_bg_image{
-    background: url('/img/BG_5.png');
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
+    background-image: url('/img/ParadiseBeachTheme.png');
 }
 
 header .nav-link {
     color: #fff;
+}
+
+.contacts-head a {
+    color: #fff;
+}
+
+.contacts-head a:hover {
+    color: #ffdd43;
+}
+
+.about-us-title {
+    color: #77c8cb;  
 }
 
 .main .navbar i {
@@ -19,11 +28,11 @@ header .nav-link {
 
 header .nav-link:hover {
     color: #fff;
-    border-bottom: 2px solid #fff;
+    border: 2px solid #ffdd43;
 }
 
 .filter-site {
-    border: 15px solid #ffde41;
+    border: 15px solid #ffdd43;
 }
 
 .news-title span {
@@ -31,39 +40,40 @@ header .nav-link:hover {
 }
 
 .news-item .btn-news-data {
-    background-color: #fe3b01;
-    color: #fff;
+    background-color: #ffde41;
+    color: #000;
 }
 
 .news-item {
-    background-color: #0b3647;
+    background-color: #00736e;
 }
 
 .decription-site {
-    border: 15px solid #0f556f;
-    background-color: #0b3647;
+    border: 15px solid #ffdd43;
+    background-color: #00736e;
 }
 
 .about-us-btn{
-    background-color: #fe3b01;
-    color: #fff;
+    background-color: #ffde41;
+    color: #000;
 }
 
 .photo-slider .btn-prev,
 .photo-slider .btn-next{
-    background-color: #fe3b01;
-    color: #fff;
+    background-color: #ffde41;
+    color: #000;
 }
 .photo-item {
-    border: 15px solid #0b3647;
+    border: 15px solid #00736e;
 }
 
 .footer {
-    background-color: #0b3647;
+    background-color: #00736e;
+    color: #fff;
 }
 
 .bi-triangle {
-    color: #fff;
+    color: #7bc6cb;
 }
 
 .f-contact-item a {
@@ -71,10 +81,10 @@ header .nav-link:hover {
 }
 
 .f-contact-links-items a {
-    color: #fff;
-    background-color: #0f556f;
+    color: #000;
+    background-color: #7bc6cb;
 }
 .f-contact-links-items a:hover {
-    background-color: #fe3b01;
-    color: #fff;
+    background-color: #ffde41;
+    color: #000;
 }
