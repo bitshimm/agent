@@ -83,7 +83,7 @@
                 </div>
                 <div class="d-none d-xl-block">
                     <div class="special-orders-block">
-                        <div class="collapse-special-orders non-active">
+                        <div class="collapse-special-orders nonactive">
                             Lorem <br>ipsum dolor <br>sit amet consectetur<br>, adipisicing<br> elit. <br>Accusamus, <br>atque. <br>
                         </div>
                         <div class="toggler-special-orders">
@@ -93,7 +93,7 @@
                                 </span>
                             </div>
                             <div>
-                                <button class="btn-special-orders non-active"><i class="fas fa-chevron-right"></i></button>
+                                <button class="btn-special-orders non-active" id="collapse-special-orders"><i class="fas fa-chevron-right"></i></button>
                             </div>
 
                         </div>

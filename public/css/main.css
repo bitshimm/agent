@@ -12,6 +12,7 @@ header .nav-link {
     padding-right: 15px !important;
     font-weight: 500;
 }
+
 .navbar-toggler:focus {
     box-shadow: none;
 }
@@ -33,12 +34,11 @@ header .nav-link {
     display: flex;
     z-index: 99999;
 }
-.collapse-special-orders.non-active{
+
+.collapse-special-orders {
     display: none;
 }
-.collapse-special-orders.active{
-    display: block;
-}
+
 .toggler-special-orders {
     padding: 10px 20px;
 }
@@ -48,6 +48,7 @@ header .nav-link {
     text-orientation: mixed;
     transform: rotate(180deg);
     padding-right: 10px;
+    font-weight: 600;
 }
 
 .btn-special-orders {
@@ -56,7 +57,7 @@ header .nav-link {
     z-index: 1;
     padding: 8px 16px;
     margin-top: 1em;
-    border:none;
+    border: none;
 }
 
 .filter-site {

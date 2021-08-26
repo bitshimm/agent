@@ -32,9 +32,10 @@
     <div class="row">
         @foreach($themes as $theme)
         <div class="col-lg-3 col-md-4 p-3">
+            <h2 class="text-center">{{ $theme->name }}</h2>
             @if($theme->name == "Sea Breeze")
-            <a href="/img/BG_5.png" data-fancybox="gallery">
-                <img src="/img/BG_5.png" alt="" class="img-thumbnail">
+            <a href="/img/SeaBreezeTheme.png" data-fancybox="gallery">
+                <img src="/img/SeaBreezeTheme.png" alt="" class="img-thumbnail">
             </a>
             @endif
             @if($theme->name == "Sunset")
