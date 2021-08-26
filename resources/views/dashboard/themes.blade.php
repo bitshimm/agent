@@ -30,17 +30,44 @@
         </form>
     </div>
     <div class="row">
-
         @foreach($themes as $theme)
-
         <div class="col-lg-3 col-md-4 p-3">
-            <a href="/img/{{ $theme->path_to_image }}" data-fancybox="gallery">
-                <img src="/img/{{ $theme->path_to_image }}" alt="" class="img-thumbnail">
+            @if($theme->name == "Sea Breeze")
+            <a href="/img/BG_5.png" data-fancybox="gallery">
+                <img src="/img/BG_5.png" alt="" class="img-thumbnail">
             </a>
+            @endif
+            @if($theme->name == "Sunset")
+            <a href="/img/SunsetTheme.png" data-fancybox="gallery">
+                <img src="/img/SunsetTheme.png" alt="" class="img-thumbnail"></a>
+
+            @endif
+            @if($theme->name == "Paradise Beach")
+            <a href="/img/ParadiseBeachTheme.png" data-fancybox="gallery">
+                <img src="/img/ParadiseBeachTheme.png" alt="" class="img-thumbnail">
+            </a>
+
+            @endif
+            @if($theme->name == "Blue Sky")
+            <a href="/img/BlueSkyTheme.png" data-fancybox="gallery">
+                <img src="/img/BlueSkyTheme.png" alt="" class="img-thumbnail">
+            </a>
+
+            @endif
+            @if($theme->name == "Blue Air")
+            <a href="/img/BlueAirTheme.png" data-fancybox="gallery">
+                <img src="/img/BlueAirTheme.png" alt="" class="img-thumbnail">
+            </a>
+
+            @endif
+            @if($theme->name == "Light Air")
+            <a href="/img/LightAirTheme.png" data-fancybox="gallery">
+                <img src="/img/LightAirTheme.png" alt="" class="img-thumbnail">
+            </a>
+
+            @endif
         </div>
-
         @endforeach
-
     </div>
 </div>
 

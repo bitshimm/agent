@@ -12,6 +12,9 @@ header .nav-link {
     padding-right: 15px !important;
     font-weight: 500;
 }
+.navbar-toggler:focus {
+    box-shadow: none;
+}
 
 .header-md-phone i {
     transform: scale(-1, 1);
@@ -19,6 +22,41 @@ header .nav-link {
 
 .navbar i {
     width: 16px;
+}
+
+.special-orders-block {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    background-color: red;
+    border-radius: 0 15px 15px 0;
+    display: flex;
+    z-index: 99999;
+}
+.collapse-special-orders.non-active{
+    display: none;
+}
+.collapse-special-orders.active{
+    display: block;
+}
+.toggler-special-orders {
+    padding: 10px 20px;
+}
+
+.text-rotate {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    padding-right: 10px;
+}
+
+.btn-special-orders {
+    border-radius: 50%;
+    font-weight: 600;
+    z-index: 1;
+    padding: 8px 16px;
+    margin-top: 1em;
+    border:none;
 }
 
 .filter-site {

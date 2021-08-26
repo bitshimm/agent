@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="/css/themes/LightAir.css">
     @endif
     @endforeach
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="/plugins/summernote/summernote-lite.min.css">
 </head>
@@ -85,7 +85,7 @@
                     </li>
                     @foreach ($select_themes as $select_theme)
                     <li class="nav-item m-2">
-                        <a href="{{route('selectThemeEdit', $select_theme->id)}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/themes*')) ? 'active' : '' }}"><i class="fas fa-address-card"></i>&nbsp;&nbsp;О нас</a>
+                        <a href="{{route('selectThemeEdit', $select_theme->id)}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/themes*')) ? 'active' : '' }}"><i class="fas fa-image"></i>&nbsp;&nbsp;Темы</a>
                     </li>
                     @endforeach
                 </ul>
@@ -96,7 +96,7 @@
                 <div class="nav-item m-2">
                     <a href="{{route('logout')}}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();" role="button" class="px-3 nav-link text-center">
-                        
+
                         <span class="d-none d-lg-block"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Выйти</span>
                     </a>
                 </div>
@@ -115,15 +115,13 @@
 
 
     <script src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.3.2.min.js" integrity="sha256-Ap4KLoCf1rXb52q+i3p0k2vjBsmownyBTE1EqlRiMwA=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="https://riverlines.ru/src/riverlines.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script src="/plugins/summernote/summernote-lite.min.js"></script>
     <script src="/plugins/summernote/lang/summernote-ru-RU.js"></script>
-    
+    <script src="https://riverlines.ru/src/riverlines.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script>
         $(function() {
             $('.text-editor').summernote({
@@ -132,6 +130,7 @@
             });
         });
     </script>
+    <script type="text/javascript" src="/js/main.js"></script>
 </body>
 
 </html>

@@ -81,8 +81,23 @@
                         @endif
                     </div>
                 </div>
-                <div style="position: absolute; height:100px; width:100px; top:100px; left:0; background-color:red;">
+                <div class="d-none d-xl-block">
+                    <div class="special-orders-block">
+                        <div class="collapse-special-orders non-active">
+                            Lorem <br>ipsum dolor <br>sit amet consectetur<br>, adipisicing<br> elit. <br>Accusamus, <br>atque. <br>
+                        </div>
+                        <div class="toggler-special-orders">
+                            <div class="text-rotate">
+                                <span>
+                                    Показать Спец предложения
+                                </span>
+                            </div>
+                            <div>
+                                <button class="btn-special-orders non-active"><i class="fas fa-chevron-right"></i></button>
+                            </div>
 
+                        </div>
+                    </div>
                 </div>
                 <div class="row pt-sm-3 pt-lg-0">
                     <div class="@if ($news->isNotEmpty()) col-lg-10 @else col-lg-12 @endif col-md-12 mb-4">
@@ -108,7 +123,7 @@
                             @foreach($news as $newsItem)
                             <div class="col-lg-12 col-md-3 col-sm-10 mt-sm-2 mt-lg-0 mb-2 news-item p-0 mx-sm-2">
                                 <div class="text-end news-head mb-2 text-light">
-                                    <img class="img-fluid" src="/storage/{{ $newsItem->path_to_file }}" alt="">
+                                    <img class="img-fluid" src="{{ $newsItem->thumb_image }}" alt="">
                                     <span class="small p-2 news-date">{{ $newsItem->created_at->format('d/m/Y') }}</span>
                                 </div>
                                 <div class="text-center px-2 text-light">
@@ -130,7 +145,7 @@
                                             </div>
                                             <div class="modal-body">
                                                 <div class="text-center">
-                                                    <img src="/storage/{{ $newsItem->path_to_file }}" alt="" class="img-fluid news-data-img">
+                                                    <img loading="lazy" src="/storage/{{ $newsItem->path_to_file }}" alt="" class="img-fluid news-data-img">
                                                 </div>
                                                 {!! $newsItem->description !!}
                                             </div>
@@ -196,7 +211,7 @@
                         <div class="photo-slider px-4">
                             @foreach($gallery as $photo)
                             <a class="photo-item" data-fancybox="gallery" href="/storage/{{ $photo->path_to_file }}">
-                                <img src="/storage/{{ $photo->path_to_file }}" alt="">
+                                <img src="{{ $photo->thumb_image }}" alt="" height="200">
                             </a>
                             @endforeach
                         </div>
@@ -205,7 +220,7 @@
                 @endif
             </div>
         </div>
-        <div class="container mt-5 py-5">
+        <div class="container mt-5 py-md-5">
             <div class="row footer py-5 px-3">
                 <div class="col-lg-1 col-md-1 d-none d-md-block text-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-triangle" viewBox="0 0 16 16">

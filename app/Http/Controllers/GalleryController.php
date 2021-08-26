@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Gallery;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class GalleryController extends Controller
 {
@@ -28,8 +29,16 @@ class GalleryController extends Controller
     {
         $gallery = new Gallery();
         $gallery->name = $req->input('name');
-        $gallery->path_to_file = $req->file('image')->storePublicly('uploads', 'public');
-
+        $source = $req->file('image');
+        if($source){
+            $name = md5(uniqid());
+            $thumb = Image::make($source)
+            ->encode('jpg', 50);
+            Storage::put('public/uploads/thumb/' . $name . '.jpg', $thumb);
+            $thumb->destroy();
+            $gallery->thumb_image = Storage::url('public/uploads/thumb/' . $name . '.jpg');
+            $gallery->path_to_file = $source->storePublicly('uploads', 'public');
+        }
         $gallery->save();
 
         return redirect()->route('gallery')->with('success', 'Картинка добавлена');

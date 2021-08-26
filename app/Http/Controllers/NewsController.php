@@ -5,9 +5,30 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\News;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class NewsController extends Controller
 {
+    public function NewsAddSubmit(Request $req)
+    {
+        $news = new News();
+        $news->title = $req->input('title');
+        $news->description = $req->input('description');
+        $source = $req->file('image');
+        if($source){
+            $name = md5(uniqid());
+            $thumb = Image::make($source)
+            ->encode('jpg', 50);
+            Storage::put('public/uploads/thumb/' . $name . '.jpg', $thumb);
+            $thumb->destroy();
+            $news->thumb_image = Storage::url('public/uploads/thumb/' . $name . '.jpg');
+            $news->path_to_file = $source->storePublicly('uploads', 'public');
+        }
+        
+        $news->save();
+
+        return redirect()->route('news')->with('success', 'Новость добавлена');
+    }
     public function News()
     {
         $news = News::all();
@@ -24,21 +45,7 @@ class NewsController extends Controller
         return view('dashboard/add/newsAdd', compact('news'));
     }
 
-    public function NewsAddSubmit(Request $req)
-    {
-        $news = new News();
-        $news->title = $req->input('title');
-        $news->description = $req->input('description');
-        if($req->file('image') == NULL){
-            $news->path_to_file ='';
-        }else{
-            $news->path_to_file = $req->file('image')->storePublicly('uploads', 'public');
-        }
-        
-        $news->save();
-
-        return redirect()->route('news')->with('success', 'Новость добавлена');
-    }
+    
 
     public function NewsEdit($id)
     {

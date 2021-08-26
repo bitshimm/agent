@@ -24,18 +24,18 @@
             <a href="/storage/{{$el->path_to_file }}" data-fancybox="gallery">
                 <div class="gallery-item" style="background-image: url('/storage/{{$el->path_to_file }}');"></div>
             </a>
-            <div class="gallery-item-desc mt-3 row">
-                <div class="col-8 text-left">
+            <div class="gallery-item-desc mt-3 d-flex justify-content-between">
+                <div class="col-8 text-start">
                     <span>{{$el->name }}</span>
                 </div>
-                <div class="col-4 text-right">
+                <div class="col-4 text-end">
                     <a href="#" role="button" class="nav-link border border-light p-0 border-0" data-bs-toggle="modal" data-bs-target="#delModal{{ $el->id }}">
                         <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                     </a>
                     <div class="modal fade" id="delModal{{ $el->id }}" tabindex="-1" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
-                                <div class="modal-body">
+                                <div class="modal-body text-center">
                                     Вы действительно хотите удалить "{{ $el->name }}"
                                 </div>
                                 <div class="modal-footer">
