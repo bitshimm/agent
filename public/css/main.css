@@ -97,6 +97,10 @@ header .nav-link {
     position: relative;
 }
 
+.news-head img {
+    width: 100%;
+}
+
 .news-head .news-date {
     position: absolute;
     left: 0;
