@@ -92,6 +92,28 @@ Route::post('/admin/dashboard/logotype/add', 'LogotypeController@LogotypeAddSubm
 Route::get('/admin/data/logotype/delete/{id}', 'LogotypeController@LogotypeDeleteSubmit')->name('logotypeDeleteSubmit')->middleware('auth');
 // Логотип
 
+// Спецпредложения
+Route::get('/admin/dashboard/specialOrders', 'SpecialOrdersController@SpecialOrders')->name('specialOrders')->middleware('auth');
+
+Route::get('/admin/dashboard/specialOrders/add', 'SpecialOrdersController@SpecialOrdersAdd')->name('specialOrdersAdd')->middleware('auth');
+
+Route::post('/admin/dashboard/specialOrders/add', 'SpecialOrdersController@SpecialOrdersAddSubmit')->name('specialOrdersAddSubmit')->middleware('auth');
+
+Route::get('/admin/dashboard/specialOrders/edit/{id}', 'SpecialOrdersController@SpecialOrdersEdit')->name('specialOrdersEdit')->middleware('auth');
+
+Route::post('/admin/dashboard/specialOrders/edit/{id}', 'SpecialOrdersController@SpecialOrdersEditSubmit')->name('specialOrdersEditSubmit')->middleware('auth');
+
+Route::get('/admin/data/specialOrders/delete/{id}', 'SpecialOrdersController@SpecialOrdersDeleteSubmit')->name('specialOrdersDeleteSubmit')->middleware('auth');
+// Спецпредложения
+
+// Виджет
+Route::get('/admin/dashboard/widget', 'WidgetController@Widget')->name('widget')->middleware('auth');
+
+Route::post('/admin/dashboard/widget/add', 'WidgetController@WidgetAddSubmit')->name('widgetAddSubmit')->middleware('auth');
+
+Route::get('/admin/data/widget/delete/{id}', 'WidgetController@WidgetDeleteSubmit')->name('widgetDeleteSubmit')->middleware('auth');
+// Виджет
+
 // Темы
 Route::get('/admin/dashboard/themes/edit/{id}', 'SelectThemeController@SelectThemeEdit')->name('selectThemeEdit')->middleware('auth');
 Route::post('/admin/dashboard/themes/edit/{id}', 'SelectThemeController@SelectThemeEditSubmit')->name('selectThemeEditSubmit')->middleware('auth');

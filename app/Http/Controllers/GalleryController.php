@@ -33,10 +33,10 @@ class GalleryController extends Controller
         if($source){
             $name = md5(uniqid());
             $thumb = Image::make($source)
-            ->encode('jpg', 50);
-            Storage::put('public/uploads/thumb/' . $name . '.jpg', $thumb);
+            ->encode('webp', 65);
+            Storage::put('public/uploads/thumb/' . $name . '.webp', $thumb);
             $thumb->destroy();
-            $gallery->thumb_image = Storage::url('public/uploads/thumb/' . $name . '.jpg');
+            $gallery->thumb_image = Storage::url('public/uploads/thumb/' . $name . '.webp');
             $gallery->path_to_file = $source->storePublicly('uploads', 'public');
         }
         $gallery->save();

@@ -81,35 +81,63 @@
                         @endif
                     </div>
                 </div>
+                @if($specialOrders->isNotEmpty())
                 <div class="d-none d-xl-block">
                     <div class="special-orders-block">
                         <div class="collapse-special-orders nonactive">
-                            Lorem <br>ipsum dolor <br>sit amet consectetur<br>, adipisicing<br> elit. <br>Accusamus, <br>atque. <br>
+                            <div class="row">
+                                @foreach($specialOrders as $specialOrder)
+                                <div class="col-lg-12">
+                                    <a href="#" role="button" class="btn btn-content-special-order" data-bs-toggle="modal" data-bs-target="#modalSpecialOrder{{ $specialOrder->id }}">
+                                        <img src="{{ $specialOrder->path_to_image }}" alt="" class="special-order-img" loading="lazy">
+                                    </a>
+                                </div>
+                                @endforeach
+                            </div>
                         </div>
                         <div class="toggler-special-orders">
                             <div class="text-rotate">
                                 <span>
-                                    Показать Спец предложения
+                                    Открыть Спецпредложения
                                 </span>
                             </div>
                             <div>
                                 <button class="btn-special-orders non-active" id="collapse-special-orders"><i class="fas fa-chevron-right"></i></button>
                             </div>
-
                         </div>
                     </div>
+                    @foreach($specialOrders as $specialOrder)
+                    <div class="modal fade" id="modalSpecialOrder{{ $specialOrder->id }}" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">{{ $specialOrder->title }}</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    {!! $specialOrder->description !!}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
+                @endif
                 <div class="row pt-sm-3 pt-lg-0">
                     <div class="@if ($news->isNotEmpty()) col-lg-10 @else col-lg-12 @endif col-md-12 mb-4">
+                        @if($widget->isNotEmpty())
                         <div class="filter-site pt-3 pb-5 px-2">
                             <div class="text-white my-4 d-flex justify-content-center">
                                 <div class=" text-end px-2"><i class="fas fa-search fa-2x"></i></div>
                                 <div class=" text-left px-2"><span class="h3 pl-5">Подобрать круиз</span></div>
                             </div>
                             <div>
-                                <div id="riverlines" data-key="f09e2d456b55d09d6db622c42f5e67237779f355" data-id="1686"></div>
+                                @foreach($widget as $widget_riverlines)
+                                {!! $widget_riverlines->code !!}
+                                @endforeach
                             </div>
                         </div>
+                        @endif
                     </div>
                     @if ($news->isNotEmpty())
                     <div class="col-lg-2 col-md-12 mb-4">
@@ -145,7 +173,7 @@
                                             </div>
                                             <div class="modal-body">
                                                 <div class="text-center">
-                                                    <img loading="lazy" src="/storage/{{ $newsItem->path_to_file }}" alt="" class="img-fluid news-data-img">
+                                                    <img loading="lazy" src="/storage/{{ $newsItem->path_to_file }}" alt="" class="news-data-img">
                                                 </div>
                                                 {!! $newsItem->description !!}
                                             </div>

@@ -31,6 +31,19 @@ header .nav-link:hover {
     border: 2px solid #ffdd43;
 }
 
+.special-orders-block {
+    background-color: #00736e;
+}
+
+.text-rotate {
+    color: #fff;
+}
+
+.btn-special-orders{
+    background-color: #ffde41;
+    color: #000;
+}
+
 .filter-site {
     border: 15px solid #ffdd43;
 }

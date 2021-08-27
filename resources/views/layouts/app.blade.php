@@ -33,7 +33,9 @@
     @endforeach
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    @if(Auth::check())
     <link rel="stylesheet" href="/plugins/summernote/summernote-lite.min.css">
+    @endif
 </head>
 
 <body class="body-img">
@@ -62,32 +64,59 @@
             </div>
             <div class="collapse navbar-collapse justify-content-center" id="navBarAdminPanel">
                 <ul class="navbar-nav  mb-2 mb-lg-0 text-center">
-                    <li class="nav-item m-2">
-                        <a href="{{route('pages')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/pages*')) ? 'active' : '' }}"><i class="fas fa-file"></i>&nbsp;&nbsp;Страницы</a>
+                    <li class="nav-item m-2 dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Контент
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a href="{{route('pages')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/pages*')) ? 'active' : '' }}"><i class="fas fa-file"></i>&nbsp;&nbsp;Страницы</a>
+                            </li>
+                            <li>
+                                <a href="{{route('news')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/news*')) ? 'active' : '' }}"><i class="fas fa-newspaper"></i>&nbsp;&nbsp;Новости</a>
+                            </li>
+                            <li>
+                                <a href="{{route('specialOrders')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/specialOrders*')) ? 'active' : '' }}"><i class="fas fa-gift"></i>&nbsp;&nbsp;Спецпредложения</a>
+                            </li>
+                            <li>
+                                <a href="{{route('aboutUs')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/aboutUs*')) ? 'active' : '' }}"><i class="fas fa-address-card"></i>&nbsp;&nbsp;О нас</a>
+                            </li>
+                            <li>
+                                <a href="{{route('gallery')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/gallery*')) ? 'active' : '' }}"><i class="fas fa-images"></i>&nbsp;&nbsp;Галлерея</a>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="nav-item m-2">
-                        <a href="{{route('gallery')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/gallery*')) ? 'active' : '' }}"><i class="fas fa-images"></i>&nbsp;&nbsp;Галлерея</a>
+                    <li class="nav-item m-2 dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Контакты
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a href="{{route('contacts')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/contacts*')) ? 'active' : '' }}"><i class="fas fa-phone-alt"></i>&nbsp;&nbsp;Контакты</a>
+                            </li>
+                            <li>
+                                <a href="{{route('social')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/social*')) ? 'active' : '' }}"><i class="fas fa-link"></i>&nbsp;&nbsp;Соц.сети</a>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="nav-item m-2">
-                        <a href="{{route('contacts')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/contacts*')) ? 'active' : '' }}"><i class="fas fa-phone-alt"></i>&nbsp;&nbsp;Контакты</a>
+                    <li class="nav-item m-2 dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Персонализация
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a href="{{route('widget')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/widget*')) ? 'active' : '' }}"><i class="fas fa-cog"></i>&nbsp;&nbsp;Виджет</a>
+                            </li>
+                            <li>
+                                <a href="{{route('logotype')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/logotype*')) ? 'active' : '' }}"><i class="far fa-smile-wink"></i>&nbsp;&nbsp;Логотип</a>
+                            </li>
+                            @foreach ($select_themes as $select_theme)
+                            <li>
+                                <a href="{{route('selectThemeEdit', $select_theme->id)}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/themes*')) ? 'active' : '' }}"><i class="fas fa-image"></i>&nbsp;&nbsp;Темы</a>
+                            </li>
+                            @endforeach
+                        </ul>
                     </li>
-                    <li class="nav-item m-2">
-                        <a href="{{route('news')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/news*')) ? 'active' : '' }}"><i class="fas fa-newspaper"></i>&nbsp;&nbsp;Новости</a>
-                    </li>
-                    <li class="nav-item m-2">
-                        <a href="{{route('social')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/social*')) ? 'active' : '' }}"><i class="fas fa-link"></i>&nbsp;&nbsp;Соц.сети</a>
-                    </li>
-                    <li class="nav-item m-2">
-                        <a href="{{route('logotype')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/logotype*')) ? 'active' : '' }}"><i class="far fa-smile-wink"></i>&nbsp;&nbsp;Логотип</a>
-                    </li>
-                    <li class="nav-item m-2">
-                        <a href="{{route('aboutUs')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/aboutUs*')) ? 'active' : '' }}"><i class="fas fa-address-card"></i>&nbsp;&nbsp;О нас</a>
-                    </li>
-                    @foreach ($select_themes as $select_theme)
-                    <li class="nav-item m-2">
-                        <a href="{{route('selectThemeEdit', $select_theme->id)}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/themes*')) ? 'active' : '' }}"><i class="fas fa-image"></i>&nbsp;&nbsp;Темы</a>
-                    </li>
-                    @endforeach
                 </ul>
             </div>
             <div class="nav-item d-none d-lg-block text-center">
@@ -118,8 +147,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-migrate-3.3.2.min.js" integrity="sha256-Ap4KLoCf1rXb52q+i3p0k2vjBsmownyBTE1EqlRiMwA=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    @if(Auth::check())
     <script src="/plugins/summernote/summernote-lite.min.js"></script>
     <script src="/plugins/summernote/lang/summernote-ru-RU.js"></script>
+    @endif
     <script src="https://riverlines.ru/src/riverlines.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script>

@@ -43,12 +43,14 @@ $(function() {
     $(".btn-special-orders").on("click", function() {
         if (!$(this).data("active")) {
             $(this).html('<i class="fas fa-chevron-left"></i>');
-            $(".collapse-special-orders").show(500);
+            $(".collapse-special-orders").show(300);
             $(this).data("active", true);
+            $('.text-rotate').html('<span>Закрыть Спецпредложения</span>');
         } else {
             $(this).html('<i class="fas fa-chevron-right"></i>');
-            $(".collapse-special-orders").hide(500);
+            $(".collapse-special-orders").hide(300);
             $(this).data("active", false);
+            $('.text-rotate').html('<span>Открыть Спецпредложения</span>');
         }
     });
 });

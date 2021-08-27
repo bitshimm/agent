@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSpecialOrdersTable extends Migration
+class CreateWidgetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateSpecialOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::create('special_orders', function (Blueprint $table) {
+        Schema::create('widgets', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('path_to_image');
-            $table->string('title');
-            $table->text('description');
+            $table->text('code');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateSpecialOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('special_orders');
+        Schema::dropIfExists('widgets');
     }
 }

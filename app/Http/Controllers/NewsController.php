@@ -18,10 +18,10 @@ class NewsController extends Controller
         if($source){
             $name = md5(uniqid());
             $thumb = Image::make($source)
-            ->encode('jpg', 50);
-            Storage::put('public/uploads/thumb/' . $name . '.jpg', $thumb);
+            ->encode('webp', 65);
+            Storage::put('public/uploads/thumb/' . $name . '.webp', $thumb);
             $thumb->destroy();
-            $news->thumb_image = Storage::url('public/uploads/thumb/' . $name . '.jpg');
+            $news->thumb_image = Storage::url('public/uploads/thumb/' . $name . '.webp');
             $news->path_to_file = $source->storePublicly('uploads', 'public');
         }
         

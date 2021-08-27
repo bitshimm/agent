@@ -10,6 +10,8 @@ use App\Models\Logotype;
 use App\Models\News;
 use App\Models\Social;
 use App\Models\AboutUs;
+use App\Models\SpecialOrders;
+use App\Models\Widget;
 
 class MainController extends Controller
 {
@@ -22,9 +24,11 @@ class MainController extends Controller
         $social = Social::all();
         $logotype = Logotype::all();
         $aboutUs = AboutUs::all();
+        $specialOrders = SpecialOrders::all();
+        $widget = Widget::all();
        
         return view(
             'main',
-            compact('navPage', 'gallery', 'contacts', 'news', 'social', 'logotype', 'aboutUs'));
+            compact('navPage', 'gallery', 'contacts', 'news', 'social', 'logotype', 'aboutUs', 'specialOrders', 'widget'));
     }
 }
