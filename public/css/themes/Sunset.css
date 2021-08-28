@@ -1,5 +1,5 @@
-.site_bg_image{
-    background-image: url('/img/SunsetTheme.png');
+.site_bg_image {
+    background-image: url('/img/SunsetTheme.webp');
 }
 
 header .nav-link {
@@ -16,7 +16,6 @@ header .nav-link {
 
 .about-us-title {
     color: #3389ac;
-    
 }
 
 .main .navbar i {
@@ -40,7 +39,7 @@ header .nav-link:hover {
     color: #fff;
 }
 
-.btn-special-orders{
+.btn-special-orders {
     background-color: #fe3b01;
     color: #fff;
 }
@@ -67,16 +66,17 @@ header .nav-link:hover {
     background-color: #0b3647;
 }
 
-.about-us-btn{
+.about-us-btn {
     background-color: #fe3b01;
     color: #fff;
 }
 
 .photo-slider .btn-prev,
-.photo-slider .btn-next{
+.photo-slider .btn-next {
     background-color: #fe3b01;
     color: #fff;
 }
+
 .photo-item {
     border: 15px solid #0b3647;
 }
@@ -98,6 +98,7 @@ header .nav-link:hover {
     color: #fff;
     background-color: #0f556f;
 }
+
 .f-contact-links-items a:hover {
     background-color: #fe3b01;
     color: #fff;

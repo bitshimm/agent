@@ -1,5 +1,5 @@
-.site_bg_image{
-    background-image: url('/img/ParadiseBeachTheme.png');
+.site_bg_image {
+    background-image: url('/img/ParadiseBeachTheme.webp');
 }
 
 header .nav-link {
@@ -15,7 +15,7 @@ header .nav-link {
 }
 
 .about-us-title {
-    color: #77c8cb;  
+    color: #77c8cb;
 }
 
 .main .navbar i {
@@ -39,7 +39,7 @@ header .nav-link:hover {
     color: #fff;
 }
 
-.btn-special-orders{
+.btn-special-orders {
     background-color: #ffde41;
     color: #000;
 }
@@ -66,16 +66,17 @@ header .nav-link:hover {
     background-color: #00736e;
 }
 
-.about-us-btn{
+.about-us-btn {
     background-color: #ffde41;
     color: #000;
 }
 
 .photo-slider .btn-prev,
-.photo-slider .btn-next{
+.photo-slider .btn-next {
     background-color: #ffde41;
     color: #000;
 }
+
 .photo-item {
     border: 15px solid #00736e;
 }
@@ -97,6 +98,7 @@ header .nav-link:hover {
     color: #000;
     background-color: #7bc6cb;
 }
+
 .f-contact-links-items a:hover {
     background-color: #ffde41;
     color: #000;

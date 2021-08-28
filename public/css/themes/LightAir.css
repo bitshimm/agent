@@ -1,5 +1,5 @@
-.site_bg_image{
-    background-image: url('/img/LightAirTheme.png');
+.site_bg_image {
+    background-image: url('/img/LightAirTheme.webp');
 }
 
 header .nav-link {
@@ -15,7 +15,7 @@ header .nav-link {
 }
 
 .about-us-title {
-    color: #799eec;  
+    color: #799eec;
 }
 
 .main .navbar i {
@@ -39,7 +39,7 @@ header .nav-link:hover {
     color: #fff;
 }
 
-.btn-special-orders{
+.btn-special-orders {
     background-color: #4ffff4;
     color: #2b4e76;
 }
@@ -48,7 +48,7 @@ header .nav-link:hover {
     border: 15px solid #76b1ff;
 }
 
-.novosti{
+.novosti {
     color: #2b4e74;
 }
 
@@ -70,24 +70,29 @@ header .nav-link:hover {
     background-color: #2b4e76;
 }
 
-.about-us-btn{
+.about-us-btn {
     background-color: #50fff6;
     color: #2b4e74;
 }
-.foto{
+
+.foto {
     color: #2b4e74;
 }
+
 .photo-slider .btn-prev,
-.photo-slider .btn-next{
+.photo-slider .btn-next {
     background-color: #50fff6;
     color: #2b4e74;
 }
+
 .photo-item {
     border: 15px solid #2c4e74;
 }
-.photo-item:hover{
+
+.photo-item:hover {
     border-color: #7494c5;
 }
+
 .footer {
     background-color: #2b4e76;
     color: #fff;
@@ -105,6 +110,7 @@ header .nav-link:hover {
     color: #2b4e76;
     background-color: #789fea;
 }
+
 .f-contact-links-items a:hover {
     background-color: #50fff6;
     color: #2b4e76;

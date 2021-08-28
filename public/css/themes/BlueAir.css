@@ -1,5 +1,5 @@
-.site_bg_image{
-    background-image: url('/img/BlueAirTheme.png');
+.site_bg_image {
+    background-image: url('/img/BlueAirTheme.webp');
 }
 
 header .nav-link {
@@ -15,7 +15,7 @@ header .nav-link {
 }
 
 .about-us-title {
-    color: #5b95e9;  
+    color: #5b95e9;
 }
 
 .main .navbar i {
@@ -39,7 +39,7 @@ header .nav-link:hover {
     color: #fff;
 }
 
-.btn-special-orders{
+.btn-special-orders {
     background-color: #ff9c00;
     color: #fff;
 }
@@ -66,16 +66,17 @@ header .nav-link:hover {
     background-color: #040410;
 }
 
-.about-us-btn{
+.about-us-btn {
     background-color: #ff9c00;
     color: #000;
 }
 
 .photo-slider .btn-prev,
-.photo-slider .btn-next{
+.photo-slider .btn-next {
     background-color: #ffde41;
     color: #000;
 }
+
 .photo-item {
     border: 15px solid #78b1ff;
 }
@@ -97,6 +98,7 @@ header .nav-link:hover {
     color: #fff;
     background-color: #000;
 }
+
 .f-contact-links-items a:hover {
     background-color: #ff9c00;
     color: #fff;

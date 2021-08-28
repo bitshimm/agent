@@ -1,5 +1,5 @@
 .sea-breeze-bg {
-    background-image: url('/img/SeaBreezeTheme.png');
+    background-image: url('/img/SeaBreezeTheme.webp');
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
@@ -42,7 +42,7 @@ header .nav-link:hover {
     color: #fff;
 }
 
-.btn-special-orders{
+.btn-special-orders {
     background-color: #d40019;
     color: #fff;
 }
