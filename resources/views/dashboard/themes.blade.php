@@ -34,36 +34,36 @@
         <div class="col-lg-3 col-md-4 p-3">
             <h2 class="text-center">{{ $theme->name }}</h2>
             @if($theme->name == "Sea Breeze")
-            <a href="/img/SeaBreezeTheme.png" data-fancybox="gallery">
-                <img src="/img/SeaBreezeTheme.png" alt="" class="img-thumbnail">
+            <a href="/img/SeaBreezeTheme.webp" data-fancybox="gallery">
+                <img src="/img/SeaBreezeTheme.webp" alt="" class="img-thumbnail">
             </a>
             @endif
             @if($theme->name == "Sunset")
-            <a href="/img/SunsetTheme.png" data-fancybox="gallery">
-                <img src="/img/SunsetTheme.png" alt="" class="img-thumbnail"></a>
+            <a href="/img/SunsetTheme.webp" data-fancybox="gallery">
+                <img src="/img/SunsetTheme.webp" alt="" class="img-thumbnail"></a>
 
             @endif
             @if($theme->name == "Paradise Beach")
-            <a href="/img/ParadiseBeachTheme.png" data-fancybox="gallery">
-                <img src="/img/ParadiseBeachTheme.png" alt="" class="img-thumbnail">
+            <a href="/img/ParadiseBeachTheme.webp" data-fancybox="gallery">
+                <img src="/img/ParadiseBeachTheme.webp" alt="" class="img-thumbnail">
             </a>
 
             @endif
             @if($theme->name == "Blue Sky")
-            <a href="/img/BlueSkyTheme.png" data-fancybox="gallery">
-                <img src="/img/BlueSkyTheme.png" alt="" class="img-thumbnail">
+            <a href="/img/BlueSkyTheme.webp" data-fancybox="gallery">
+                <img src="/img/BlueSkyTheme.webp" alt="" class="img-thumbnail">
             </a>
 
             @endif
             @if($theme->name == "Blue Air")
-            <a href="/img/BlueAirTheme.png" data-fancybox="gallery">
-                <img src="/img/BlueAirTheme.png" alt="" class="img-thumbnail">
+            <a href="/img/BlueAirTheme.webp" data-fancybox="gallery">
+                <img src="/img/BlueAirTheme.webp" alt="" class="img-thumbnail">
             </a>
 
             @endif
             @if($theme->name == "Light Air")
-            <a href="/img/LightAirTheme.png" data-fancybox="gallery">
-                <img src="/img/LightAirTheme.png" alt="" class="img-thumbnail">
+            <a href="/img/LightAirTheme.webp" data-fancybox="gallery">
+                <img src="/img/LightAirTheme.webp" alt="" class="img-thumbnail">
             </a>
 
             @endif
