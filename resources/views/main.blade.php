@@ -123,7 +123,7 @@
                     @endforeach
                 </div>
                 @endif
-                <div class="row pt-sm-3 pt-lg-0 mx-0 mx-md-4 text-light">
+                <div class="row pt-sm-3 pt-lg-0 mx-0 mx-md-4">
                     <div class="@if ($news->isNotEmpty()) col-lg-10 @else col-lg-12 @endif col-md-12 mb-4">
                         @if($widget->isNotEmpty())
                         <div class="filter-site pt-3 pb-5 px-2">
