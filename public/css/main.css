@@ -108,6 +108,7 @@ header .nav-link {
 
 .news-head {
     position: relative;
+    min-height: 40px;
 }
 
 .news-head img {
