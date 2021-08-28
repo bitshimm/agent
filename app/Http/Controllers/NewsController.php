@@ -18,6 +18,7 @@ class NewsController extends Controller
         if($source){
             $name = md5(uniqid());
             $thumb = Image::make($source)
+            ->resize(551, 367)
             ->encode('webp', 65);
             Storage::put('public/uploads/thumb/' . $name . '.webp', $thumb);
             $thumb->destroy();
