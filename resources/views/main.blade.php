@@ -82,7 +82,7 @@
                     </div>
                 </div>
                 @if($specialOrders->isNotEmpty())
-                <div class="d-none d-xl-block">
+                <div class="d-none d-lg-block">
                     <div class="special-orders-block">
                         <div class="collapse-special-orders nonactive">
                             <div class="row">
@@ -187,6 +187,42 @@
                         </div>
                     </div>
                     @endif
+                </div>
+                <div class="row px-3 d-sm-block d-md-block d-lg-none special-orders-mobile mb-3 mx-1 pb-3">
+                    <div class="col-12">
+                        <div class="align-middle text-center special-orders-mobile-title py-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-triangle" viewBox="0 0 16 16">
+                                <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z" />
+                            </svg>
+                            <span>
+                                Спецпредложения
+                            </span>
+                        </div>
+                        <div class="row justify-content-center">
+                            @if($specialOrders->isNotEmpty())
+                            @foreach($specialOrders as $specialOrder)
+                            <div class="col-4 text-center">
+                                <a href="#" role="button" class="btn btn-content-special-order" data-bs-toggle="modal" data-bs-target="#modalSpecialOrdermobile{{ $specialOrder->id }}">
+                                    <img src="{{ $specialOrder->path_to_image }}" alt="" class="special-order-img" loading="lazy">
+                                </a>
+                                <div class="modal fade" id="modalSpecialOrdermobile{{ $specialOrder->id }}" tabindex="-1" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">{{ $specialOrder->title }}</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                {!! $specialOrder->description !!}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                            @endif
+                        </div>
+                    </div>
                 </div>
                 @if ($aboutUs->isNotEmpty())
                 <div class="row px-3">

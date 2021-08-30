@@ -31,11 +31,13 @@ header .nav-link:hover {
     border: 2px solid #2b4e74;
 }
 
-.special-orders-block {
+.special-orders-block,
+.special-orders-mobile {
     background-color: #2b4e76;
 }
 
-.text-rotate {
+.text-rotate,
+.special-orders-mobile-title {
     color: #fff;
 }
 
@@ -50,10 +52,6 @@ header .nav-link:hover {
 
 .novosti {
     color: #2b4e74;
-}
-
-.news-title span {
-    color: #fff;
 }
 
 .news-item .btn-news-data {

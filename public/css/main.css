@@ -81,7 +81,8 @@ header .nav-link {
     width: 20px;
 }
 
-.news-title .bi-triangle {
+.news-title .bi-triangle,
+.special-orders-mobile .bi-triangle{
     margin-top: 0;
 }
 

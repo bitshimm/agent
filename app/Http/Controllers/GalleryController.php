@@ -33,7 +33,9 @@ class GalleryController extends Controller
         if($source){
             $name = md5(uniqid());
             $thumb = Image::make($source)
-            ->resize(200, 200)
+            ->resize(null, 200, function ($constraint) {
+                $constraint->aspectRatio();
+            })
             ->encode('webp', 65);
             Storage::put('public/uploads/thumb/' . $name . '.webp', $thumb);
             $thumb->destroy();

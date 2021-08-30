@@ -31,11 +31,13 @@ header .nav-link:hover {
     border: 2px solid #ffdd43;
 }
 
-.special-orders-block {
+.special-orders-block,
+.special-orders-mobile {
     background-color: #00736e;
 }
 
-.text-rotate {
+.text-rotate,
+.special-orders-mobile-title {
     color: #fff;
 }
 
