@@ -21,8 +21,8 @@
     <div class="row">
         @foreach($gallery as $el)
         <div class="col-lg-3 col-md-4 col-sm-12 mb-3">
-            <a href="/storage/{{$el->path_to_file }}" data-fancybox="gallery">
-                <div class="gallery-item" style="background-image: url('/storage/{{$el->path_to_file }}');"></div>
+            <a href="{{$el->path_to_file }}" data-fancybox="gallery">
+                <div class="gallery-item" style="background-image: url('{{$el->thumb_image }}');"></div>
             </a>
             <div class="gallery-item-desc mt-3 d-flex justify-content-between">
                 <div class="col-8 text-start">

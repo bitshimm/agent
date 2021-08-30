@@ -25,7 +25,13 @@ class NewsController extends Controller
             Storage::put('public/uploads/thumb/' . $name . '.webp', $thumb);
             $thumb->destroy();
             $news->thumb_image = Storage::url('public/uploads/thumb/' . $name . '.webp');
-            $news->path_to_file = $source->storePublicly('uploads', 'public');
+
+
+            $image = Image::make($source)
+            ->encode('webp', 90);
+            Storage::put('public/uploads/' . $name . '.webp', $image);
+            $image->destroy();
+            $news->path_to_file = Storage::url('public/uploads/' . $name . '.webp');
         }else{
             $news->path_to_file = "";
             $news->thumb_image = " ";

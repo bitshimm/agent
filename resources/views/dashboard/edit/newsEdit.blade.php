@@ -12,7 +12,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="image" class="form-label">Изображение</label>
-                    <div class="news-img-item" style="background-image: url('/storage/{{ $news->path_to_file }}');">
+                    <div class="news-img-item" style="background-image: url('{{ $news->thumb_image }}');">
                     </div>
                 </div>
                 <div class="mb-3">

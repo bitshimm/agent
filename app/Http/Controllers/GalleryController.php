@@ -40,7 +40,12 @@ class GalleryController extends Controller
             Storage::put('public/uploads/thumb/' . $name . '.webp', $thumb);
             $thumb->destroy();
             $gallery->thumb_image = Storage::url('public/uploads/thumb/' . $name . '.webp');
-            $gallery->path_to_file = $source->storePublicly('uploads', 'public');
+
+            $image = Image::make($source)
+            ->encode('webp', 90);
+            Storage::put('public/uploads/' . $name . '.webp', $image);
+            $image->destroy();
+            $gallery->path_to_file = Storage::url('public/uploads/' . $name . '.webp');
         }
         $gallery->save();
 

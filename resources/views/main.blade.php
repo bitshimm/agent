@@ -175,7 +175,7 @@
                                             </div>
                                             <div class="modal-body">
                                                 <div class="text-center">
-                                                    <img loading="lazy" src="/storage/{{ $newsItem->path_to_file }}" alt="" class="news-data-img">
+                                                    <img loading="lazy" src="{{ $newsItem->path_to_file }}" alt="" class="news-data-img">
                                                 </div>
                                                 {!! $newsItem->description !!}
                                             </div>
@@ -276,7 +276,7 @@
                     <div class="col-12 mb-3">
                         <div class="photo-slider px-4">
                             @foreach($gallery as $photo)
-                            <a class="photo-item" data-fancybox="gallery" href="/storage/{{ $photo->path_to_file }}">
+                            <a class="photo-item" data-fancybox="gallery" href="{{ $photo->path_to_file }}">
                                 <img src="{{ $photo->thumb_image }}" alt="" height="200">
                             </a>
                             @endforeach
