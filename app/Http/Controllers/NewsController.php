@@ -28,6 +28,9 @@ class NewsController extends Controller
 
 
             $image = Image::make($source)
+            ->resize(766, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })
             ->encode('webp', 90);
             Storage::put('public/uploads/' . $name . '.webp', $image);
             $image->destroy();
