@@ -12,6 +12,7 @@ use App\Models\Social;
 use App\Models\AboutUs;
 use App\Models\SpecialOrders;
 use App\Models\Widget;
+use App\User;
 
 class MainController extends Controller
 {
@@ -26,9 +27,10 @@ class MainController extends Controller
         $aboutUs = AboutUs::all();
         $specialOrders = SpecialOrders::all();
         $widget = Widget::all();
+        $users = User::all();
        
         return view(
             'main',
-            compact('navPage', 'gallery', 'contacts', 'news', 'social', 'logotype', 'aboutUs', 'specialOrders', 'widget'));
+            compact('navPage', 'gallery', 'contacts', 'news', 'social', 'logotype', 'aboutUs', 'specialOrders', 'widget', 'users'));
     }
 }

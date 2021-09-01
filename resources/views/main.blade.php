@@ -74,7 +74,7 @@
         <div class="main mb-3">
             <div class="container">
                 <div class="row py-2"></div>
-                <div class="row d-none d-lg-block">
+                <div class="row d-none d-lg-block mx-md-4">
                     <div class="col-2 offset-10 text-start text-white p-0">
                         @if ($news->isNotEmpty())
                         <h4 class="novosti">НОВОСТИ</h4>

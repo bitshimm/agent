@@ -115,6 +115,11 @@
                                 <a href="{{route('selectThemeEdit', $select_theme->id)}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/themes*')) ? 'active' : '' }}"><i class="fas fa-image"></i>&nbsp;&nbsp;Темы</a>
                             </li>
                             @endforeach
+                            @foreach($users as $user)
+                            <li>
+                                <a href="{{route('profileEdit', $user->id)}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/profile*')) ? 'active' : '' }}"><i class="far fa-smile-wink"></i>&nbsp;&nbsp;Профиль</a>
+                            </li>
+                            @endforeach
                         </ul>
                     </li>
                 </ul>
