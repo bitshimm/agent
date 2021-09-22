@@ -35,6 +35,9 @@ class SpecialOrdersController extends Controller
         if ($source) {
             $name = md5(uniqid());
             $thumb = Image::make($source)
+                ->resize(null, 100, function ($constraint) {
+                    $constraint->aspectRatio();
+                })
                 ->encode('webp', 65);
             Storage::put('public/uploads/thumb/' . $name . '.webp', $thumb);
             $thumb->destroy();
@@ -45,7 +48,7 @@ class SpecialOrdersController extends Controller
 
         return redirect()->route('specialOrders')->with('success', 'Спецпредложение добавлено');
     }
-    
+
     public function SpecialOrdersEdit($id)
     {
         $specialOrders = new SpecialOrders();

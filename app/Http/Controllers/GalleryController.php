@@ -33,7 +33,7 @@ class GalleryController extends Controller
         if($source){
             $name = md5(uniqid());
             $thumb = Image::make($source)
-            ->resize(null, 200, function ($constraint) {
+            ->resize(null, 367, function ($constraint) {
                 $constraint->aspectRatio();
             })
             ->encode('webp', 65);
