@@ -21,11 +21,11 @@ class MainController extends Controller
         $navPage = NavPage::all();
         $gallery = Gallery::all();
         $contacts = Contact::all();
-        $news = News::all();
+        $news = News::all()->reverse();
         $social = Social::all();
         $logotype = Logotype::all();
         $aboutUs = AboutUs::all();
-        $specialOrders = SpecialOrders::all();
+        $specialOrders = SpecialOrders::all()->reverse();;
         $widget = Widget::all();
         $users = User::all();
        
