@@ -12,27 +12,19 @@
         <form action="{{ route('profileEditSubmit', $users->id)}}" method="post">
             @csrf
             <div class="mb-3">
-                <div class="form-group row">
-                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Имя') }}</label>
-
-                    <div class="col-md-6">
-                        <input id="name" type="text" class="form-control" name="name" value="{{ $users->name }}">
-                    </div>
+                <div class="form-group mb-3">
+                    <label for="name" class="col-form-label text-md-right">{{ __('Имя') }}</label>
+                    <input id="name" type="text" class="form-control" name="name" value="{{ $users->name }}">
                 </div>
-
-                <div class="form-group row">
-                    <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
-
-                    <div class="col-md-6">
-                        <input id="email" type="email" class="form-control" name="email" value="{{ $users->email }}">
-                    </div>
+                <div class="form-group mb-3">
+                    <label for="email" class="col-form-label text-md-right">{{ __('E-Mail') }}</label>
+                    <input id="email" type="email" class="form-control" name="email" value="{{ $users->email }}">
                 </div>
-                <div class="form-group row">
-                    <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                    <div class="col-md-6">
-                        <input id="password" type="text" class="form-control" name="password" value="">
-                    </div>
+                <div class="form-group mb-3 mt-3">
+                    <h4>Смена пароля:</h4>
+                    <input id="password" type="text" class="form-control mb-3" name="current_password" value="" placeholder="Старый пароль">
+                    <input id="password" type="text" class="form-control mb-3" name="new_password" value="" placeholder="Новый пароль">
+                    <input id="password" type="text" class="form-control mb-3" name="new_password_confirmation" value="" placeholder="Подтвердите пароль">
                 </div>
             </div>
 
