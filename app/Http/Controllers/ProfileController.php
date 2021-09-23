@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
@@ -20,10 +18,6 @@ class ProfileController extends Controller
         $users = User::find($id);
         $users->name = $req->input('name');
         $users->email = $req->input('email');
-        // $password = $req->input('password');
-        // if ($password) {
-        //     $users->password = bcrypt($password);
-        // }
         $password = $req->only([
             'current_password', 'new_password', 'new_password_confirmation'
         ]);
