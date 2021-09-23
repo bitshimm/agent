@@ -27,6 +27,13 @@
                         <input id="email" type="email" class="form-control" name="email" value="{{ $users->email }}">
                     </div>
                 </div>
+                <div class="form-group row">
+                    <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                    <div class="col-md-6">
+                        <input id="password" type="text" class="form-control" name="password" value="">
+                    </div>
+                </div>
             </div>
 
             <div class="justify-content-between d-flex">
