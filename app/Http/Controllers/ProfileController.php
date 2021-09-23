@@ -24,17 +24,15 @@ class ProfileController extends Controller
         // if ($password) {
         //     $users->password = bcrypt($password);
         // }
-        $current_password = $req->input('current_password');
-        $new_password = $req->input('new_password');
+        $password = $req->only([
+            'current_password', 'new_password', 'new_password_confirmation'
+        ]);
         $userpass = $users->password;
-        if ($current_password) {
-            if (Hash::check($current_password, $userpass)) {
-                $users->password = bcrypt($new_password);
-                dd('success',$current_password, $new_password, Hash::check($new_password, $users->password));
-
+        if ($password['current_password']) {
+            if (Hash::check($password['current_password'], $userpass)) {
+                $users->password = bcrypt($password['new_password']);
             }else {
-                dd('error');
-                return redirect()->route('profileEdit', $id)->with('success', 'Неверный пароль');
+                return redirect()->route('profileEdit', $id)->with('error', 'Неверный пароль');
             }
         }
         $users->save();
