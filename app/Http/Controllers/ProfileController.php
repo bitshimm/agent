@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\ProfileRequest;
 
 class ProfileController extends Controller
 {
@@ -13,7 +14,7 @@ class ProfileController extends Controller
         $users = new User();
         return view('dashboard/profile', ['users' => $users->find($id)]);
     }
-    public function ProfileEditSubmit($id, Request $req)
+    public function ProfileEditSubmit($id, ProfileRequest $req)
     {
         $users = User::find($id);
         $users->name = $req->input('name');
@@ -22,7 +23,7 @@ class ProfileController extends Controller
             'current_password', 'new_password', 'new_password_confirmation'
         ]);
         $userpass = $users->password;
-        if ($password['current_password']) {
+        if ($password['current_password'] || $password['new_password'] || $password['new_password_confirmation']) {
             if (Hash::check($password['current_password'], $userpass)) {
                 $users->password = bcrypt($password['new_password']);
             }else {
@@ -31,6 +32,6 @@ class ProfileController extends Controller
         }
         $users->save();
 
-        return redirect()->route('profileEdit', $id)->with('success', 'Профиль изменен');
+        return redirect()->route('profileEdit', $id)->with('success', 'Профиль сохранен');
     }
 }

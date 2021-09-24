@@ -22,6 +22,18 @@
                 </div>
                 <div class="form-group mb-3 mt-3">
                     <h4>Смена пароля:</h4>
+                    @if($errors->any() )
+                    <div class="alert alert-danger">
+                        @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </div>
+                    @endif
+                    @if(session('error'))
+                    <div class="alert alert-danger">
+                        <li>{{ session('error')}}</li>
+                    </div>
+                    @endif
                     <input id="current_password" type="text" class="form-control mb-3" name="current_password" value="" placeholder="Старый пароль">
                     <input id="new_password" type="text" class="form-control mb-3" name="new_password" value="" placeholder="Новый пароль">
                     <input id="new_password_confirmation" type="text" class="form-control mb-3" name="new_password_confirmation" value="" placeholder="Подтвердите пароль">

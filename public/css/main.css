@@ -318,5 +318,5 @@ header .nav-link {
 }
 
 .dropdown-menu li:last-child .nav-link {
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 9px 9px;
 }
