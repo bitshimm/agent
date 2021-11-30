@@ -143,7 +143,7 @@
     </nav>
 
     @endif
-    <div style="min-height: 1000px;">
+    <div>
         @yield('content')
     </div>
 
@@ -162,7 +162,7 @@
         $(function() {
             $('.text-editor').summernote({
                 lang: "ru-RU",
-                height: 200
+                height: 650
             });
         });
     </script>

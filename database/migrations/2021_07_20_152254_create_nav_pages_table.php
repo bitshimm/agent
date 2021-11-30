@@ -16,7 +16,7 @@ class CreateNavPagesTable extends Migration
         Schema::create('nav_pages', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->text('description');
+            $table->longText('description');
             $table->timestamps();
         });
     }

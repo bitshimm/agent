@@ -188,6 +188,7 @@
                     </div>
                     @endif
                 </div>
+                @if($specialOrders->isNotEmpty())
                 <div class="row px-3 d-sm-block d-md-block d-lg-none special-orders-mobile mb-3 mx-1 pb-3">
                     <div class="col-12">
                         <div class="align-middle text-center special-orders-mobile-title py-3">
@@ -199,7 +200,6 @@
                             </span>
                         </div>
                         <div class="row justify-content-center">
-                            @if($specialOrders->isNotEmpty())
                             @foreach($specialOrders as $specialOrder)
                             <div class="col-4 text-center">
                                 <a href="#" role="button" class="btn btn-content-special-order" data-bs-toggle="modal" data-bs-target="#modalSpecialOrdermobile{{ $specialOrder->id }}">
@@ -220,10 +220,10 @@
                                 </div>
                             </div>
                             @endforeach
-                            @endif
                         </div>
                     </div>
                 </div>
+                @endif
                 @if ($aboutUs->isNotEmpty())
                 <div class="row px-3">
                     <div class="col-12 decription-site">
