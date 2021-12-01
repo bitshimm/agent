@@ -21,20 +21,20 @@ class NewsController extends Controller
             ->resize(null, 367, function ($constraint) {
                 $constraint->aspectRatio();
             })
-            ->encode('webp', 65);
-            Storage::put('public/uploads/thumb/' . $name . '.webp', $thumb);
+            ->encode('jpg', 65);
+            Storage::put('public/uploads/thumb/' . $name . '.jpg', $thumb);
             $thumb->destroy();
-            $news->thumb_image = Storage::url('public/uploads/thumb/' . $name . '.webp');
+            $news->thumb_image = Storage::url('public/uploads/thumb/' . $name . '.jpg');
 
 
             $image = Image::make($source)
             ->resize(766, null, function ($constraint) {
                 $constraint->aspectRatio();
             })
-            ->encode('webp', 90);
-            Storage::put('public/uploads/' . $name . '.webp', $image);
+            ->encode('jpg', 90);
+            Storage::put('public/uploads/' . $name . '.jpg', $image);
             $image->destroy();
-            $news->path_to_file = Storage::url('public/uploads/' . $name . '.webp');
+            $news->path_to_file = Storage::url('public/uploads/' . $name . '.jpg');
         }else{
             $news->path_to_file = "";
             $news->thumb_image = " ";

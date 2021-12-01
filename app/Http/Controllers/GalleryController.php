@@ -36,16 +36,16 @@ class GalleryController extends Controller
             ->resize(null, 367, function ($constraint) {
                 $constraint->aspectRatio();
             })
-            ->encode('webp', 65);
-            Storage::put('public/uploads/thumb/' . $name . '.webp', $thumb);
+            ->encode('jpg', 65);
+            Storage::put('public/uploads/thumb/' . $name . '.jpg', $thumb);
             $thumb->destroy();
-            $gallery->thumb_image = Storage::url('public/uploads/thumb/' . $name . '.webp');
+            $gallery->thumb_image = Storage::url('public/uploads/thumb/' . $name . '.jpg');
 
             $image = Image::make($source)
-            ->encode('webp', 90);
-            Storage::put('public/uploads/' . $name . '.webp', $image);
+            ->encode('jpg', 90);
+            Storage::put('public/uploads/' . $name . '.jpg', $image);
             $image->destroy();
-            $gallery->path_to_file = Storage::url('public/uploads/' . $name . '.webp');
+            $gallery->path_to_file = Storage::url('public/uploads/' . $name . '.jpg');
         }
         $gallery->save();
 
