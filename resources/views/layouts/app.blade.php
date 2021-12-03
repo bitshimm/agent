@@ -160,9 +160,40 @@
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script>
         $(function() {
+            var Formbtn = function(context) {
+                var ui = $.summernote.ui;
+
+                // var formContent = "<div class=\"call_back_form row justify-content-between\"><div class=\"col-12 mb-4\"><span>Остались вопросы? Отправьте нам заявку на бесплатный звонок!</span></div><div class=\"col-lg-4 col-md-12 mb-2\"><input type=\"text\" placeholder=\"Ваше имя\"></div><div class=\"col-lg-4 col-md-12 mb-2\"><input type=\"text\" placeholder=\"Ваш телефон\"></div><div class=\"col-lg-4 col-md-12 mb-2\"><input type=\"text\" value=\"ЗАКАЗАТЬ ЗВОНОК\" class=\"send\"></div></div>";
+
+                var button = ui.button({
+                    contents: '<i class="fab fa-wpforms"></i> Форма',
+                    tooltip: 'Форма',
+                    click: function() {
+                        // context.invoke('editor.insertText', formContent);
+                        var formContent = document.createElement('div');
+                        formContent.innerHTML = "<div class=\"call_back_form row justify-content-between\"><div class=\"col-12 mb-4\"><span>Остались вопросы? Отправьте нам заявку на бесплатный звонок!</span></div><div class=\"col-lg-4 col-md-12 mb-2\"><input type=\"text\" placeholder=\"Ваше имя\"></div><div class=\"col-lg-4 col-md-12 mb-2\"><input type=\"text\" placeholder=\"Ваш телефон\"></div><div class=\"col-lg-4 col-md-12 mb-2\"><input type=\"text\" value=\"ЗАКАЗАТЬ ЗВОНОК\" class=\"send\"></div></div><br>";
+                        context.invoke('editor.insertNode', formContent);
+                    }
+                });
+
+                return button.render(); // return button as jquery object
+            }
             $('.text-editor').summernote({
                 lang: "ru-RU",
-                height: 650
+                height: 650,
+                toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['font', ['strikethrough', 'superscript', 'subscript']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['height', ['height']],
+                    ['view', ['fullscreen', 'codeview', 'help']],
+                    ['mybutton', ['form']],
+                ],
+                buttons: {
+                    form: Formbtn,
+                }
             });
         });
     </script>

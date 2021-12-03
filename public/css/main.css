@@ -320,3 +320,39 @@ header .nav-link {
 .dropdown-menu li:last-child .nav-link {
     border-radius: 0 0 9px 9px;
 }
+
+.call_back_form{
+    background-color: #7bbee5;
+    padding: 25px 15px;
+}
+
+.call_back_form span {
+    font-size: 20px;
+    color: #fff;
+}
+
+.call_back_form .col-lg-4 {
+    text-align: center;
+}
+
+.call_back_form input{
+    height: 39px;
+    box-sizing: border-box;
+    text-align: center;
+    border: none;
+    font-size: 13px;
+}
+
+.call_back_form input:focus-visible{
+    outline: none;
+}
+
+.call_back_form .send{
+    background-color: #ff6500;
+    color: #fff;
+    cursor: pointer;
+}
+
+.call_back_form input::placeholder{
+    font-size: 16px;
+}
