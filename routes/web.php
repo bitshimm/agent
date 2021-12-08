@@ -124,4 +124,6 @@ Route::get('/admin/dashboard/profile/edit/{id}', 'ProfileController@ProfileEdit'
 Route::post('/admin/dashboard/profile/edit/{id}', 'ProfileController@ProfileEditSubmit')->name('profileEditSubmit')->middleware('auth');
 // Темы
 
+Route::post('/', 'CallBackController@CallBack')->name('callback');
+
 Auth::routes();

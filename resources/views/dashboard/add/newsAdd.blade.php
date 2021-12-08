@@ -26,20 +26,25 @@
             </div>
         </div>
     </form>
-    <div class="call_back_form row justify-content-between">
-        <div class="col-12 mb-4">
-            <span>Остались вопросы? Отправьте нам заявку на бесплатный звонок!</span>
+
+    <form action="{{ route('callback')}}" method="post">
+    @csrf
+        <div class="call_back_form row justify-content-between">
+            <div class="col-12 mb-4">
+                <span>Остались вопросы? Отправьте нам заявку на бесплатный звонок!</span>
+            </div>
+            <div class="col-lg-4 col-md-12 mb-2">
+                <input type="text" placeholder="Ваше имя" name="name" required>
+            </div>
+            <div class="col-lg-4 col-md-12 mb-2">
+                <input type="text" placeholder="Ваш телефон" name="phone" required>
+            </div>
+            <div class="col-lg-4 col-md-12 mb-2">
+                <input type="submit" value="ЗАКАЗАТЬ ЗВОНОК" class="send">
+            </div>
         </div>
-        <div class="col-lg-4 col-md-12 mb-2">
-            <input type="text" placeholder="Ваше имя">
-        </div>
-        <div class="col-lg-4 col-md-12 mb-2">
-            <input type="text" placeholder="Ваш телефон">
-        </div>
-        <div class="col-lg-4 col-md-12 mb-2">
-            <input type="text" value="ЗАКАЗАТЬ ЗВОНОК" class="send">
-        </div>
-    </div>
+    </form>
     <br>
+
 </div>
 @endsection
