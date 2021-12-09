@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    Имя: {{$name}}
-    Телефон: {{$phone}}
-</body>
-
-</html>
+<div style="border-radius: 10px; background-color: #03a9f4; color: #fff; padding:20px;">
+    <h2>
+        Заявка на беплатный звонок
+    </h2>
+    <h3>Имя: <span style="font-weight:bold;">{{$name}}</span></h3>
+    <h3>Телефон: <span style="font-weight:bold;">{{$phone}}</span></h3>
+</div>

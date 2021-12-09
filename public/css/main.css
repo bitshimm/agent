@@ -340,7 +340,8 @@ header .nav-link {
     box-sizing: border-box;
     text-align: center;
     border: none;
-    font-size: 13px;
+    font-size: 16px;
+    width: 80%;
 }
 
 .call_back_form input:focus-visible{
@@ -351,6 +352,8 @@ header .nav-link {
     background-color: #ff6500;
     color: #fff;
     cursor: pointer;
+    font-size: 13px;
+    padding: 0 10px;
 }
 
 .call_back_form input::placeholder{
