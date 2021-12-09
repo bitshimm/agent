@@ -169,7 +169,7 @@
                     tooltip: 'Форма',
                     click: function() {
                         var formContent = document.createElement('div');
-                        formContent.innerHTML = "<form action=\"{{ route('callback')}}\" method=\"post\">"+'@csrf'+ " <div class=\"call_back_form row justify-content-between\"> <div class=\"col-12 mb-4\"> <span>Остались вопросы? отправьте нам заявку на бесплатный звонок!</span> </div> <div class=\"col-lg-4 col-md-12 mb-2\"> <input type=\"text\" placeholder=\"ваше имя\" name=\"name\" required> </div> <div class=\"col-lg-4 col-md-12 mb-2\"> <input type=\"text\" id=\"phone\" placeholder=\"ваш телефон\" name=\"phone\" required> </div> <div class=\"col-lg-4 col-md-12 mb-2\"> <input type=\"submit\" value=\"заказать звонок\" class=\"send\"> </div> </div> </form> <br>";
+                        formContent.innerHTML = "<form action=\"{{ route('callback')}}\" method=\"get\"><div class=\"call_back_form row justify-content-between\"> <div class=\"col-12 mb-4\"> <span>Остались вопросы? отправьте нам заявку на бесплатный звонок!</span> </div> <div class=\"col-lg-4 col-md-12 mb-2\"> <input type=\"text\" placeholder=\"ваше имя\" name=\"name\" required> </div> <div class=\"col-lg-4 col-md-12 mb-2\"> <input type=\"text\" id=\"phone\" placeholder=\"ваш телефон\" name=\"phone\" required> </div> <div class=\"col-lg-4 col-md-12 mb-2\"> <input type=\"submit\" value=\"заказать звонок\" class=\"send\"> </div> </div> </form> <br>";
                         context.invoke('editor.insertNode', formContent);
                     }
                 });

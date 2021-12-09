@@ -12,6 +12,6 @@ class CallBackController extends Controller
         $name = $req->input('name');
         $phone = $req->input('phone');
         Mail::to('itbshimm@gmail.com')->send(new CallBack($name, $phone));
-        return redirect()->back()->with('success', 'Контакт добавлен');
+        return redirect()->route('main')->with('success', 'Контакт добавлен');
     }
 }
