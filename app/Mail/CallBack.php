@@ -37,6 +37,6 @@ class CallBack extends Mailable
                 'name' => $this->name,
                 'phone' => $this->phone
             ])
-            ->subject('callback');
+            ->subject('Заявка на беплатный звонок');
     }
 }

@@ -193,7 +193,6 @@
                     form: Formbtn,
                 }
             });
-            $("#phone").mask("+7 (999) 999 99-99");
         });
     </script>
     <script type="text/javascript" src="/js/main.js"></script>
