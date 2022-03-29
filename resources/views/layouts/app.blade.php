@@ -82,7 +82,7 @@
                                 <a href="{{route('aboutUs')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/aboutUs*')) ? 'active' : '' }}"><i class="fas fa-address-card"></i>&nbsp;&nbsp;О нас</a>
                             </li>
                             <li>
-                                <a href="{{route('gallery')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/gallery*')) ? 'active' : '' }}"><i class="fas fa-images"></i>&nbsp;&nbsp;Галлерея</a>
+                                <a href="{{route('gallery')}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/gallery*')) ? 'active' : '' }}"><i class="fas fa-images"></i>&nbsp;&nbsp;Галерея</a>
                             </li>
                         </ul>
                     </li>

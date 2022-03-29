@@ -38,7 +38,7 @@ class SpecialOrdersController extends Controller
                 ->resize(null, 100, function ($constraint) {
                     $constraint->aspectRatio();
                 })
-                ->encode('jpg', 65);
+                ->encode('jpg', 100);
             Storage::put('public/uploads/thumb/' . $name . '.jpg', $thumb);
             $thumb->destroy();
             $specialOrders->path_to_image = Storage::url('public/uploads/thumb/' . $name . '.jpg');

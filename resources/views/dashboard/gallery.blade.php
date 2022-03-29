@@ -7,7 +7,7 @@
         {{ session('success')}}
     </div>
     @endif
-    <h3>Галлерея</h3>
+    <h3>Галерея</h3>
     <div class="mb-3">
         <a href="{{route('galleryAdd')}}">
             <button class="btn btn-primary">Добавить</i></button>

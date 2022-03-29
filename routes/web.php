@@ -18,7 +18,7 @@ Route::post('/admin/dashboard/pages/edit/{id}', 'NavPageController@PageEditSubmi
 Route::get('/admin/data/page/delete/{id}', 'NavPageController@PageDeleteSubmit')->name('PageDeleteSubmit')->middleware('auth');
 // Меню
 
-// Галлерея
+// Галерея
 Route::get('/admin/dashboard/gallery', 'GalleryController@Gallery')->name('gallery')->middleware('auth');
 
 Route::get('/admin/dashboard/gallery/add', 'GalleryController@GalleryAdd')->name('galleryAdd')->middleware('auth');
@@ -26,7 +26,7 @@ Route::get('/admin/dashboard/gallery/add', 'GalleryController@GalleryAdd')->name
 Route::post('/admin/dashboard/gallery/add', 'GalleryController@GalleryAddSubmit')->name('galleryAddSubmit')->middleware('auth');
 
 Route::get('/admin/data/gallery/delete/{id}', 'GalleryController@GalleryDeleteSubmit')->name('galleryDeleteSubmit')->middleware('auth');
-// Галлерея
+// Галерея
 
 // Контакты
 Route::get('/admin/dashboard/contacts', 'ContactController@Contacts')->name('contacts')->middleware('auth');
