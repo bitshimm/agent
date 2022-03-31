@@ -15,26 +15,29 @@ class NewsController extends Controller
         $news->title = $req->input('title');
         $news->description = $req->input('description');
         $source = $req->file('image');
+        $extensionFile = $req->file('image')->getClientOriginalExtension();
+        // dd($extensionFile);
         if($source){
             $name = md5(uniqid());
             $thumb = Image::make($source)
             ->resize(null, 367, function ($constraint) {
                 $constraint->aspectRatio();
             })
-            ->encode('jpg', 65);
-            Storage::put('public/uploads/thumb/' . $name . '.jpg', $thumb);
+            ->encode($extensionFile, 65);
+            // dd($thumb);
+            Storage::put('public/uploads/thumb/' . $name . '.' . $extensionFile, $thumb);
             $thumb->destroy();
-            $news->thumb_image = Storage::url('public/uploads/thumb/' . $name . '.jpg');
+            $news->thumb_image = Storage::url('public/uploads/thumb/' . $name . '.' . $extensionFile);
 
 
             $image = Image::make($source)
             ->resize(766, null, function ($constraint) {
                 $constraint->aspectRatio();
             })
-            ->encode('jpg', 90);
-            Storage::put('public/uploads/' . $name . '.jpg', $image);
+            ->encode($extensionFile, 90);
+            Storage::put('public/uploads/' . $name . '.' . $extensionFile, $image);
             $image->destroy();
-            $news->path_to_file = Storage::url('public/uploads/' . $name . '.jpg');
+            $news->path_to_file = Storage::url('public/uploads/' . $name . '.' . $extensionFile);
         }else{
             $news->path_to_file = "";
             $news->thumb_image = " ";

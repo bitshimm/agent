@@ -12,7 +12,7 @@
                 <a class="navbar-brand" href="{{route('main')}}">
                     @foreach($logotype as $logo)
 
-                    <img src="/storage/{{ $logo->path_to_file }}" alt="" style="height: 36px;">
+                    <img src="/storage/{{ $logo->path_to_file }}" alt="" style="width:242px;">
 
                     @endforeach
 

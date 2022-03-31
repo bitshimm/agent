@@ -30,22 +30,23 @@ class GalleryController extends Controller
         $gallery = new Gallery();
         $gallery->name = $req->input('name');
         $source = $req->file('image');
+        $extensionFile = $req->file('image')->getClientOriginalExtension();
         if($source){
             $name = md5(uniqid());
             $thumb = Image::make($source)
             ->resize(null, 367, function ($constraint) {
                 $constraint->aspectRatio();
             })
-            ->encode('jpg', 65);
-            Storage::put('public/uploads/thumb/' . $name . '.jpg', $thumb);
+            ->encode($extensionFile, 65);
+            Storage::put('public/uploads/thumb/' . $name . '.' . $extensionFile, $thumb);
             $thumb->destroy();
-            $gallery->thumb_image = Storage::url('public/uploads/thumb/' . $name . '.jpg');
+            $gallery->thumb_image = Storage::url('public/uploads/thumb/' . $name . '.' . $extensionFile);
 
             $image = Image::make($source)
             ->encode('jpg', 90);
-            Storage::put('public/uploads/' . $name . '.jpg', $image);
+            Storage::put('public/uploads/' . $name . '.' . $extensionFile, $image);
             $image->destroy();
-            $gallery->path_to_file = Storage::url('public/uploads/' . $name . '.jpg');
+            $gallery->path_to_file = Storage::url('public/uploads/' . $name . '.' . $extensionFile);
         }
         $gallery->save();
 

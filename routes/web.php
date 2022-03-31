@@ -119,10 +119,10 @@ Route::get('/admin/dashboard/themes/edit/{id}', 'SelectThemeController@SelectThe
 Route::post('/admin/dashboard/themes/edit/{id}', 'SelectThemeController@SelectThemeEditSubmit')->name('selectThemeEditSubmit')->middleware('auth');
 // Темы
 
-// Темы
+// Профиль
 Route::get('/admin/dashboard/profile/edit/{id}', 'ProfileController@ProfileEdit')->name('profileEdit')->middleware('auth');
 Route::post('/admin/dashboard/profile/edit/{id}', 'ProfileController@ProfileEditSubmit')->name('profileEditSubmit')->middleware('auth');
-// Темы
+// Профиль
 
 Route::get('/test', 'CallBackController@CallBack')->name('callback');
 
