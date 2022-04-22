@@ -32,8 +32,8 @@ class SpecialOrdersController extends Controller
         $specialOrders->title = $req->input('title');
         $specialOrders->description = $req->input('description');
         $source = $req->file('image');
-        $extensionFile = $req->file('image')->getClientOriginalExtension();
         if ($source) {
+            $extensionFile = $req->file('image')->getClientOriginalExtension();
             $name = md5(uniqid());
             $thumb = Image::make($source)
                 ->resize(null, 100, function ($constraint) {

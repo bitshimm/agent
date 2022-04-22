@@ -30,8 +30,8 @@ class GalleryController extends Controller
         $gallery = new Gallery();
         $gallery->name = $req->input('name');
         $source = $req->file('image');
-        $extensionFile = $req->file('image')->getClientOriginalExtension();
         if($source){
+            $extensionFile = $req->file('image')->getClientOriginalExtension();
             $name = md5(uniqid());
             $thumb = Image::make($source)
             ->resize(null, 367, function ($constraint) {
