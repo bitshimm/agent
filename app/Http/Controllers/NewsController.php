@@ -15,9 +15,8 @@ class NewsController extends Controller
         $news->title = $req->input('title');
         $news->description = $req->input('description');
         $source = $req->file('image');
-        $extensionFile = $req->file('image')->getClientOriginalExtension();
-        // dd($extensionFile);
         if($source){
+            $extensionFile = $req->file('image')->getClientOriginalExtension();
             $name = md5(uniqid());
             $thumb = Image::make($source)
             ->resize(null, 367, function ($constraint) {
