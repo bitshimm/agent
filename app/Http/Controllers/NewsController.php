@@ -83,6 +83,9 @@ class NewsController extends Controller
 
     public function NewsDeleteSubmit($id)
     {
+        $newsItem = News::find($id);
+        unlink(public_path($newsItem->thumb_image));
+        unlink(public_path($newsItem->path_to_file));
         News::find($id)->delete();
         return redirect()->route('news')->with('success', 'Новость удалена');
     }
