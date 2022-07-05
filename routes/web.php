@@ -124,6 +124,11 @@ Route::get('/admin/dashboard/profile/edit/{id}', 'ProfileController@ProfileEdit'
 Route::post('/admin/dashboard/profile/edit/{id}', 'ProfileController@ProfileEditSubmit')->name('profileEditSubmit')->middleware('auth');
 // Профиль
 
+// Meta
+Route::get('/admin/dashboard/meta/edit/{id}', 'MetaController@MetaEdit')->name('metaEdit')->middleware('auth');
+Route::post('/admin/dashboard/meta/edit/{id}', 'MetaController@MetaEditSubmit')->name('metaEditSubmit')->middleware('auth');
+// Meta
+
 Route::get('/test', 'CallBackController@CallBack')->name('callback');
 
 Auth::routes();

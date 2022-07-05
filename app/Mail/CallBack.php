@@ -33,6 +33,7 @@ class CallBack extends Mailable
     public function build()
     {
         return $this->view('emails.callback')
+            ->from("agent@cruiselines.pro", $this->name)
             ->with([
                 'name' => $this->name,
                 'phone' => $this->phone

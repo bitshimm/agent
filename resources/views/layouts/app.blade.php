@@ -5,12 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="/css/slick.css">
     <link rel="stylesheet" href="/css/slick-theme.css">
     <link rel="stylesheet" href="/css/main.css">
+    @if($meta->title)
+    <title>{{$meta->title}}</title>
+    <meta property="og:title" content="{{$meta->title}}">
+    @endif
+    @if($meta->description)
+    <meta name="description" content="{{$meta->description}}">
+    <meta property="og:description" content="{{$meta->description}}">
+    @endif
+    @if($meta->type)
+    <meta property="og:type" content="{{$meta->type}}">
+    @endif
+    @if($meta->site_name)
+    <meta property="og:site_name" content="{{$meta->site_name}}">
+    @endif
+    @if($meta->image)
+    <meta property="og:image" content="{{$url}}{{$meta->image}}">
+    @endif
+    @if($meta->metrika)
+    {!! $meta->metrika !!}
+    @endif
     @foreach ($select_themes as $theme)
     @if($theme->select_theme_name == "Sea Breeze")
     <link rel="stylesheet" href="/css/themes/SeaBreeze.css">
@@ -115,6 +134,9 @@
                                 <a href="{{route('selectThemeEdit', $select_theme->id)}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/themes*')) ? 'active' : '' }}"><i class="fas fa-image"></i>&nbsp;&nbsp;Темы</a>
                             </li>
                             @endforeach
+                            <li>
+                                <a href="{{route('metaEdit', 1)}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/meta*')) ? 'active' : '' }}"><i class="fas fa-ruler"></i>&nbsp;&nbsp;Meta-информация</a>
+                            </li>
                             <!-- @foreach($users as $user)
                             <li>
                                 <a href="{{route('profileEdit', $user->id)}}" role="button" class="px-3 nav-link {{ (request()->is('admin/dashboard/profile*')) ? 'active' : '' }}"><i class="far fa-smile-wink"></i>&nbsp;&nbsp;Профиль</a>

@@ -9,43 +9,6 @@ use Intervention\Image\Facades\Image;
 
 class NewsController extends Controller
 {
-    public function NewsAddSubmit(Request $req)
-    {
-        $news = new News();
-        $news->title = $req->input('title');
-        $news->description = $req->input('description');
-        $source = $req->file('image');
-        if($source){
-            $extensionFile = $req->file('image')->getClientOriginalExtension();
-            $name = md5(uniqid());
-            $thumb = Image::make($source)
-            ->resize(null, 367, function ($constraint) {
-                $constraint->aspectRatio();
-            })
-            ->encode($extensionFile, 65);
-            // dd($thumb);
-            Storage::put('public/uploads/thumb/' . $name . '.' . $extensionFile, $thumb);
-            $thumb->destroy();
-            $news->thumb_image = Storage::url('public/uploads/thumb/' . $name . '.' . $extensionFile);
-
-
-            $image = Image::make($source)
-            ->resize(766, null, function ($constraint) {
-                $constraint->aspectRatio();
-            })
-            ->encode($extensionFile, 90);
-            Storage::put('public/uploads/' . $name . '.' . $extensionFile, $image);
-            $image->destroy();
-            $news->path_to_file = Storage::url('public/uploads/' . $name . '.' . $extensionFile);
-        }else{
-            $news->path_to_file = "";
-            $news->thumb_image = " ";
-        }
-        
-        $news->save();
-
-        return redirect()->route('news')->with('success', 'Новость добавлена');
-    }
     public function News()
     {
         $news = News::all();
@@ -62,7 +25,42 @@ class NewsController extends Controller
         return view('dashboard/add/newsAdd', compact('news'));
     }
 
-    
+    public function NewsAddSubmit(Request $req)
+    {
+        $news = new News();
+        $news->title = $req->input('title');
+        $news->description = $req->input('description');
+        $source = $req->file('image');
+        if($source){
+            $extensionFile = $req->file('image')->getClientOriginalExtension();
+            $name = md5(uniqid());
+            $thumb = Image::make($source)
+            ->resize(null, 367, function ($constraint) {
+                $constraint->aspectRatio();
+            })
+            ->encode($extensionFile, 65);
+
+            Storage::put('public/uploads/thumb/' . $name . '.' . $extensionFile, $thumb);
+            $thumb->destroy();
+            $news->thumb_image = Storage::url('public/uploads/thumb/' . $name . '.' . $extensionFile);
+
+            $image = Image::make($source)
+            ->resize(766, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })
+            ->encode($extensionFile, 90);
+            Storage::put('public/uploads/' . $name . '.' . $extensionFile, $image);
+            $image->destroy();
+            $news->path_to_file = Storage::url('public/uploads/' . $name . '.' . $extensionFile);
+        }else{
+            $news->path_to_file = "";
+            $news->thumb_image = "";
+        }
+        
+        $news->save();
+
+        return redirect()->route('news')->with('success', 'Новость добавлена');
+    }
 
     public function NewsEdit($id)
     {
@@ -75,7 +73,35 @@ class NewsController extends Controller
         $news = News::find($id);
         $news->title = $req->input('title');
         $news->description = $req->input('description');
+        $source = $req->file('image');
+        if ($source) {
+            if ($news->thumb_image && $news->thumb_image != ' ') {
+                unlink(public_path($news->thumb_image));
+            }
+            if ($news->path_to_file){
+                unlink(public_path($news->path_to_file));
+            }
+            $extensionFile = $req->file('image')->getClientOriginalExtension();
+            $name = md5(uniqid());
+            $thumb = Image::make($source)
+            ->resize(null, 367, function ($constraint) {
+                $constraint->aspectRatio();
+            })
+            ->encode($extensionFile, 65);
 
+            Storage::put('public/uploads/thumb/' . $name . '.' . $extensionFile, $thumb);
+            $thumb->destroy();
+            $news->thumb_image = Storage::url('public/uploads/thumb/' . $name . '.' . $extensionFile);
+
+            $image = Image::make($source)
+            ->resize(766, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })
+            ->encode($extensionFile, 90);
+            Storage::put('public/uploads/' . $name . '.' . $extensionFile, $image);
+            $image->destroy();
+            $news->path_to_file = Storage::url('public/uploads/' . $name . '.' . $extensionFile);
+        }
         $news->save();
 
         return redirect()->route('news', $id)->with('success', 'Новость изменена');
@@ -84,8 +110,15 @@ class NewsController extends Controller
     public function NewsDeleteSubmit($id)
     {
         $newsItem = News::find($id);
-        unlink(public_path($newsItem->thumb_image));
-        unlink(public_path($newsItem->path_to_file));
+        if ($newsItem->title != "Морские круизы из Сочи в Турцию"){
+            if ($newsItem->thumb_image && $newsItem->thumb_image != ' ') {
+                unlink(public_path($newsItem->thumb_image));
+            }
+            if ($newsItem->path_to_file){
+                unlink(public_path($newsItem->path_to_file));
+            }
+        }
+        
         News::find($id)->delete();
         return redirect()->route('news')->with('success', 'Новость удалена');
     }

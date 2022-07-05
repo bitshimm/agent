@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Meta;
 use App\Models\SelectTheme;
 use App\User;
 use Illuminate\Support\ServiceProvider;
@@ -27,10 +28,15 @@ class ComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer(['layouts.app'], function ($view) {
-            $view->with(['select_themes' => SelectTheme::All()]);
+            $view->with([
+                'select_themes' => SelectTheme::All(),
+                'users' => User::All(),
+                'meta' => Meta::first(),
+                'url' => url('/')
+            ]);
         });
-        View::composer(['layouts.app'], function ($view) {
-            $view->with(['users' => User::All()]);
-        });
+        // View::composer(['layouts.app'], function ($view) {
+        //     $view->with(['users' => User::All()]);
+        // });
     }
 }
