@@ -25,7 +25,7 @@ class ProfileRequest extends FormRequest
     {
         return [
             'current_password' => 'required_with_all:new_password, new_password_confirmation',
-            'new_password' => 'required_with:current_password|min:8|nullable',
+            'new_password' => 'required_with:current_password|min:6|nullable',
             'new_password_confirmation' => 'required_with:new_password',
         ];
     }
@@ -35,7 +35,7 @@ class ProfileRequest extends FormRequest
             'current_password.required_with_all' => 'Вы не ввели действующий пароль',
             'new_password.required_with' => 'Вы не ввели новый пароль',
             'new_password_confirmation.required_with' => 'Вы не подтвердили новый пароль',
-            'new_password.min' => 'Новый пароль должен содержать не менее 8 символов',
+            'new_password.min' => 'Новый пароль должен содержать не менее 6 символов',
         ];
     }
 }
