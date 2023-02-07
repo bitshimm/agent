@@ -70,7 +70,9 @@ class SpecialOrdersController extends Controller
     public function SpecialOrdersDeleteSubmit($id)
     {
         $specialOrderItem = SpecialOrders::find($id);
-        unlink(public_path($specialOrderItem->path_to_image));
+        if ($specialOrderItem->path_to_image != '') {
+            unlink(public_path($specialOrderItem->path_to_image));
+        }
         SpecialOrders::find($id)->delete();
         return redirect()->route('specialOrders')->with('success', 'Спецпредложение удалено');
     }
