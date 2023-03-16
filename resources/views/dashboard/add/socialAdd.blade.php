@@ -15,6 +15,7 @@
                     <option value="fa-twitter">Twitter</option>
                     <option value="fa-youtube">YouTube</option>
                     <option value="fa-odnoklassniki">Одноклассники</option>
+                    <option value="fa-telegram">Telegram</option>
                 </select>
             </div>
             <div class="col-lg-8 col-md-10 col-sm 12">
