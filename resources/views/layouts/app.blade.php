@@ -198,6 +198,7 @@
 
                 return button.render();
             }
+            @if(Auth::check())
             $('.text-editor').summernote({
                 lang: "ru-RU",
                 height: 650,
@@ -215,6 +216,7 @@
                     form: Formbtn,
                 }
             });
+            @endif
         });
     </script>
     <script type="text/javascript" src="/js/main.js"></script>
