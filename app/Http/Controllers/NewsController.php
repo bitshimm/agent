@@ -75,10 +75,10 @@ class NewsController extends Controller
         $news->description = $req->input('description');
         $source = $req->file('image');
         if ($source) {
-            if ($news->thumb_image && $news->thumb_image != ' ') {
+            if ($news->thumb_image && $news->thumb_image != ' ' && file_exists(public_path($news->thumb_image))) {
                 unlink(public_path($news->thumb_image));
             }
-            if ($news->path_to_file){
+            if ($news->path_to_file && file_exists(public_path($news->path_to_file))){
                 unlink(public_path($news->path_to_file));
             }
             $extensionFile = $req->file('image')->getClientOriginalExtension();
@@ -111,10 +111,10 @@ class NewsController extends Controller
     {
         $newsItem = News::find($id);
         if ($newsItem->title != "Морские круизы из Сочи в Турцию"){
-            if ($newsItem->thumb_image && $newsItem->thumb_image != ' ') {
+            if ($newsItem->thumb_image && $newsItem->thumb_image != ' ' && file_exists(public_path($newsItem->thumb_image))) {
                 unlink(public_path($newsItem->thumb_image));
             }
-            if ($newsItem->path_to_file){
+            if ($newsItem->path_to_file && file_exists(public_path($newsItem->path_to_file))){
                 unlink(public_path($newsItem->path_to_file));
             }
         }

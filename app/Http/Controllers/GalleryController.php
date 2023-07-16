@@ -55,8 +55,8 @@ class GalleryController extends Controller
 
     public function GalleryDeleteSubmit($id){
         $galleryItem = Gallery::find($id);
-        unlink(public_path($galleryItem->thumb_image));
-        unlink(public_path($galleryItem->path_to_file));
+        if (file_exists(public_path($galleryItem->thumb_image))) unlink(public_path($galleryItem->thumb_image));
+        if (file_exists(public_path($galleryItem->path_to_file))) unlink(public_path($galleryItem->path_to_file));
         Gallery::find($id)->delete();
         return redirect()->route('gallery')->with('success', 'Изображение удалено');
     }

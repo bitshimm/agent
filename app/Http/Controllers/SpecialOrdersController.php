@@ -70,7 +70,7 @@ class SpecialOrdersController extends Controller
     public function SpecialOrdersDeleteSubmit($id)
     {
         $specialOrderItem = SpecialOrders::find($id);
-        if ($specialOrderItem->path_to_image != '') {
+        if ($specialOrderItem->path_to_image != '' && file_exists(public_path($specialOrderItem->path_to_image))) {
             unlink(public_path($specialOrderItem->path_to_image));
         }
         SpecialOrders::find($id)->delete();

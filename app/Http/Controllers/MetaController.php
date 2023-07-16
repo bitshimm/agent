@@ -26,10 +26,10 @@ class MetaController extends Controller
         $meta->metrika = $req->input('metrika');
         $source = $req->file('image');
         if ($source) {
-            if ($meta->thumb_image) {
+            if ($meta->thumb_image && file_exists(public_path($meta->thumb_image))) {
                 unlink(public_path($meta->thumb_image));
             }
-            if ($meta->image) {
+            if ($meta->image && file_exists(public_path($meta->image))) {
                 unlink(public_path($meta->image));
             }
             $extensionFile = $req->file('image')->getClientOriginalExtension();

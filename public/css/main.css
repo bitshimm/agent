@@ -3,6 +3,7 @@
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 header .nav-link {
@@ -42,7 +43,7 @@ header .nav-link {
 
 .special-order-img {
     width: 70px;
-    height: 70px;
+    /* height: 70px; */
 }
 
 .btn-content-special-order:focus {
