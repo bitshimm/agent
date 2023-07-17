@@ -61,6 +61,23 @@ class SpecialOrdersController extends Controller
         $specialOrders = SpecialOrders::find($id);
         $specialOrders->title = $req->input('title');
         $specialOrders->description = $req->input('description');
+        $source = $req->file('image');
+
+        if ($source) {
+            if ($specialOrders->path_to_image != '' && file_exists(public_path($specialOrders->path_to_image))) {
+                unlink(public_path($specialOrders->path_to_image));
+            }
+            $extensionFile = $req->file('image')->getClientOriginalExtension();
+            $name = md5(uniqid());
+            $thumb = Image::make($source)
+                ->resize(null, 100, function ($constraint) {
+                    $constraint->aspectRatio();
+                })
+                ->encode($extensionFile, 100);
+            Storage::put('public/uploads/thumb/' . $name . '.' . $extensionFile, $thumb);
+            $thumb->destroy();
+            $specialOrders->path_to_image = Storage::url('public/uploads/thumb/' . $name . '.' . $extensionFile);
+        }
 
         $specialOrders->save();
 
